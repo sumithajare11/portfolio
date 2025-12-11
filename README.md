@@ -3,32 +3,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sumit Hajare - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background: #0e0e0e; color: #fff; line-height: 1.6; }
-    header { padding: 40px 10%; display: flex; justify-content: space-between; align-items: center; }
-    header h1 { font-size: 28px; font-weight: 700; }
-    nav a { margin-left: 25px; text-decoration: none; color: #fff; font-weight: 500; }
 
-    .hero { padding: 90px 10%; text-align: left; }
-    .hero h2 { font-size: 48px; font-weight: 700; }
-    .hero h3 { font-size: 24px; margin-top: 10px; color: #00e1ff; }
-    .hero p { margin-top: 20px; width: 60%; }
-    .btn { display: inline-block; margin-top: 25px; padding: 12px 25px; background: #00e1ff; color: #000; font-weight: 600; text-decoration: none; border-radius: 6px; }
+    body { background-color: #ffffff; color: #111; } /* Same as Manya's white background */
+    a { text-decoration: none; color: inherit; }
 
+    /* Header */
+    header { display: flex; justify-content: space-between; align-items: center; padding: 30px 10%; position: sticky; top: 0; background: #fff; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    header h1 { font-weight: 700; font-size: 28px; }
+    nav a { margin-left: 25px; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: #00bcd4; }
+
+    /* Hero Section */
+    .hero { display: flex; flex-direction: column; justify-content: center; padding: 100px 10%; text-align: left; }
+    .hero h2 { font-size: 48px; font-weight: 700; color: #111; }
+    .hero h3 { font-size: 24px; color: #00bcd4; margin-top: 10px; }
+    .hero p { margin-top: 20px; font-size: 18px; line-height: 1.6; max-width: 650px; }
+    .btn { display: inline-block; margin-top: 30px; padding: 12px 25px; background: #00bcd4; color: #fff; font-weight: 600; border-radius: 6px; transition: 0.3s; }
+    .btn:hover { background: #0097a7; }
+
+    /* Section Titles */
     .section { padding: 80px 10%; }
-    .section h2 { font-size: 36px; font-weight: 700; margin-bottom: 30px; border-left: 5px solid #00e1ff; padding-left: 15px; }
+    .section h2 { font-size: 36px; font-weight: 700; margin-bottom: 30px; border-left: 5px solid #00bcd4; padding-left: 15px; }
 
+    /* Skills & Projects Grid */
     .skills-grid, .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-    .card { background: #1a1a1a; padding: 25px; border-radius: 10px; border: 1px solid #333; transition: 0.3s; }
-    .card:hover { transform: translateY(-5px); border-color: #00e1ff; }
-    .card h3 { margin-bottom: 10px; color: #00e1ff; }
+    .card { background: #f5f5f5; padding: 25px; border-radius: 10px; transition: 0.3s; border: 1px solid #e0e0e0; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .card h3 { margin-bottom: 10px; color: #00bcd4; }
+    .card p { color: #111; }
 
-    footer { text-align: center; padding: 40px; background: #111; margin-top: 50px; }
+    /* Footer */
+    footer { text-align: center; padding: 40px 10%; background: #f8f8f8; margin-top: 50px; font-size: 14px; color: #555; }
 
     /* Responsive */
     @media (max-width: 768px) {
@@ -82,17 +94,3 @@
     </div>
   </div>
 </section>
-
-<section class="section" id="contact">
-  <h2>Contact</h2>
-  <p>Email: <strong>sumithajare2003@gmail.com</strong></p>
-  <p>GitHub: <strong>github.com/sumithajare11</strong></p>
-  <p>LinkedIn: <strong>linkedin.com/in/sumit-hajare-3b562132b</strong></p>
-</section>
-
-<footer>
-  <p>© 2025 Sumit Hajare | Portfolio Website</p>
-</footer>
-
-</body>
-</html>
