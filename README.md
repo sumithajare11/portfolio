@@ -41,7 +41,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #545d8f;
+            color: #c47254;
             text-decoration: none;
         }
 
