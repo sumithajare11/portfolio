@@ -110,7 +110,7 @@
             height: 500px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid #64ffda;
+            border: 5px solid #1a120f;
         }
 
         .hero-img img {
@@ -547,7 +547,7 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="#home" class="logo">Sumit Hajare</a>
+        <a href="#Home" class="logo">Sumit Hajare</a>
         <ul class="nav-links">
             <li><a href="#Home">Home</a></li>
             <li><a href="#About">About</a></li>
