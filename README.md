@@ -7,24 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Sumit Hajare</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        /* --- General Reset & Variables --- */
-        :root {
-            --dark-navy: #0a192f; /* Main Background Color (Dark/Black) */
-            --navy: #112240;      /* Secondary Background/Card Color */
-            --light-navy: #233554;
-            --lightest-slate: #ccd6f6; /* Main Body Text Color (Light) */
-            --slate: #8892b0;        /* Secondary Text Color */
-            --green: #64ffda;        /* Accent Color (Keep your bright teal) */
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* Use a modern font, like Inter */
-            font-family: 'Inter', 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         html {
@@ -32,391 +20,409 @@
         }
 
         body {
-            background: var(--dark-navy);
-            color: var(--slate);
-            line-height: 1.5;
-            min-height: 100vh;
-            display: flex; /* Enable the two-column layout */
+            background: #ffffff;
+            color: #333333;
             overflow-x: hidden;
         }
 
-        /* --- New Two-Column Layout Structure --- */
-        .left-sidebar {
-            /* Fixed sidebar on the left */
+        /* Navigation */
+        nav {
             position: fixed;
             top: 0;
-            left: 0;
-            width: 40%; /* Adjust as needed, e.g., 400px or 35% */
-            max-width: 500px;
-            min-width: 300px;
-            height: 100vh;
-            padding: 0 4rem;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Space out header and footer/socials */
-            z-index: 100;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .main-content {
-            /* Scrollable content on the right */
-            margin-left: 40%; /* Must match .left-sidebar width */
-            padding: 5rem 10% 3rem 5%; /* Adjust padding for visual balance */
-            width: 60%; /* Must match .left-sidebar width complement */
-            min-height: 100vh;
-            overflow-y: auto;
-        }
-
-        /* --- Left Sidebar Content Styling --- */
-        .sidebar-header {
-            padding-top: 5rem;
-        }
-
-        .sidebar-header h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--lightest-slate);
-            margin-bottom: 0.5rem;
-        }
-
-        .sidebar-header h2 {
+        .logo {
             font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--lightest-slate);
-            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #64ffda;
+            text-decoration: none;
         }
 
-        .sidebar-header p {
-            font-size: 1rem;
-            color: var(--slate);
-            max-width: 300px;
-            margin-bottom: 3rem;
-        }
-
-        /* Navigation Links in Sidebar */
         .nav-links {
-            list-style: none;
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            list-style: none;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: var(--slate);
+            color: #333333;
             text-decoration: none;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.95rem;
             transition: color 0.3s;
-            display: inline-block;
-            position: relative;
-            padding-left: 20px;
         }
 
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 15px;
-            height: 1px;
-            background-color: var(--slate);
+        .nav-links a:hover {
+            color: #64ffda;
+        }
+
+        /* Hero Section */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+            gap: 4rem;
+        }
+
+        .hero-content h1 {
+            font-size: 1.2rem;
+            color: #64ffda;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h2 {
+            font-size: 4rem;
+            color: #333333;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content .typing {
+            font-size: 1.5rem;
+            color: #64ffda;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid #64ffda;
+            color: #64ffda;
+            text-decoration: none;
+            border-radius: 5px;
             transition: all 0.3s;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--green);
-        }
-
-        .nav-links a:hover::before,
-        .nav-links a.active::before {
-            width: 25px;
-            background-color: var(--green);
-        }
-
-        /* Social Links in Sidebar Footer */
-        .sidebar-footer {
-            padding-bottom: 3rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            font-size: 1.5rem;
-            color: var(--slate);
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--green);
-            transform: translateY(-3px);
-        }
-        
-        /* The hero image is removed as per the reference website style */
-        #home .hero-img {
-            display: none;
-        }
-
-        /* --- Main Content Section Styling --- */
-        section {
-            padding: 3rem 0;
-            min-height: auto; /* Remove fixed height for main content sections */
-            margin-bottom: 5rem;
-        }
-
-        /* About Section */
-        #about h2 {
-            font-size: 2rem;
-            color: var(--lightest-slate);
-            margin-bottom: 2rem;
-        }
-        
-        #about p {
-            color: var(--slate);
-            margin-bottom: 1.25rem;
-        }
-
-        .about-content h3, .about-content h4 {
-            color: var(--lightest-slate);
-        }
-        
-        .about-content .email {
-            color: var(--green);
-            display: block;
-        }
-        
-        .cta-btn {
-            background: var(--dark-navy); /* Match background */
-            border: 1px solid var(--green); /* Thin border */
-            color: var(--green);
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            font-weight: 600;
-        }
-        
         .cta-btn:hover {
             background: rgba(100, 255, 218, 0.1);
         }
 
-        /* About Image (often removed or highly styled in this theme) */
-        #about .about-img {
-            display: none;
+        .hero-img {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #64ffda;
         }
 
-        /* General Heading Style (used for Skills, Education, Projects) */
-        .section-header {
-            color: var(--lightest-slate);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            position: sticky;
-            top: 0; /* Make section titles sticky */
-            background: var(--dark-navy);
-            padding: 1rem 0;
-            z-index: 10;
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        
-        .section-header span {
-            color: var(--green);
-            font-size: 1rem;
-            font-weight: 400;
-            margin-right: 0.5rem;
+
+        /* About Section */
+        #about {
+            min-height: 100vh;
+            padding: 5rem 10%;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-img {
+            width: 400px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid #64ffda;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: #333333;
+            margin-bottom: 1rem;
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            color: #64ffda;
+            margin-bottom: 1rem;
+        }
+
+        .about-content h4 {
+            font-size: 1.3rem;
+            color: #333333;
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #555555;
+        }
+
+        .about-content .email {
+            color: #64ffda;
+            margin: 1rem 0;
         }
 
         /* Skills Section */
+        #skills {
+            min-height: 100vh;
+            padding: 5rem 10%;
+            background: #f8f9fa;
+        }
+
         #skills h2 {
-            display: none; /* Replaced by .section-header */
+            font-size: 2.5rem;
+            color: #333333;
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
+
         .skill-card {
-            background: var(--dark-navy); /* Match background, no distinct card */
-            padding: 0.5rem 0.5rem 0.5rem 0; /* Light padding/flat appearance */
-            border: none;
-            text-align: left;
-            transition: none;
-            box-shadow: none;
-            border-bottom: none;
-            flex: 0 0 auto; /* Allow items to wrap */
-        }
-        
-        .skill-icon {
-            display: none; /* Hide icon for simpler list style */
-        }
-        
-        .skill-card h3 {
-            color: var(--slate);
-            font-size: 0.9rem;
-            font-weight: 400;
-        }
-        
-        /* Education Section - Timeline-style, simple listing */
-        #education h2, #education .subtitle {
-            display: none; /* Replaced by .section-header */
-        }
-        
-        .education-grid {
-            grid-template-columns: 1fr; /* Single column */
-            gap: 1rem;
-        }
-        
-        .education-card {
-            background: var(--navy); /* Use secondary background color for cards */
-            padding: 1.5rem;
-            border: none;
-            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7); /* Subtle dark shadow */
-            transition: background 0.3s;
-            border-radius: 4px;
-        }
-
-        .education-card:hover {
-            background: var(--light-navy);
-            transform: translateY(0); /* Remove unnecessary hover transform */
-            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-        }
-
-        .education-card img {
-            display: none; /* Remove images for a cleaner look */
-        }
-        
-        .education-card h3 {
-            color: var(--lightest-slate);
-            font-size: 1.2rem;
-            margin-bottom: 0.25rem;
-        }
-        
-        .education-card h4 {
-            color: var(--green);
-            font-size: 0.9rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .education-card p {
-            color: var(--slate);
-            font-size: 0.9rem;
-        }
-        
-        /* Projects Section - Card style adjusted for dark theme */
-        #work h2 {
-            display: none; /* Replaced by .section-header */
-        }
-
-        .projects-grid {
-            grid-template-columns: 1fr; /* Single column layout for projects */
-            gap: 2.5rem;
-        }
-        
-        .project-card {
-            background: var(--navy); /* Secondary background color */
-            border: none;
-            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-            border-radius: 4px;
-            display: flex; /* Adjust to place image/content horizontally */
-            overflow: visible;
-        }
-
-        .project-card:nth-child(even) {
-            flex-direction: row-reverse; /* Alternate image/text position */
-        }
-
-        .project-card:hover {
-            transform: translateY(0);
-            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-        }
-
-        .project-card img {
-            width: 50%;
-            height: auto;
-            object-fit: cover;
-            opacity: 0.8;
-            mix-blend-mode: multiply; /* Optional: adds a nice dark/tinted effect */
-            transition: opacity 0.3s;
-            border-radius: 4px 0 0 4px;
-        }
-
-        .project-card:nth-child(even) img {
-            border-radius: 0 4px 4px 0;
-        }
-        
-        .project-card:hover img {
-            opacity: 1;
-        }
-
-        .project-info {
-            width: 50%;
+            background: #ffffff;
             padding: 2rem;
-        }
-        
-        .project-info h3 {
-            color: var(--lightest-slate);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e0e0;
         }
 
-        .project-info p {
-            color: var(--slate);
-            font-size: 0.95rem;
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: #64ffda;
             margin-bottom: 1rem;
         }
 
-        .project-links a {
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--green);
-            color: var(--green);
-            font-size: 0.9rem;
+        .skill-card h3 {
+            color: #333333;
+            font-size: 1rem;
         }
-        
+
+        /* Education Section */
+        #education {
+            min-height: 100vh;
+            padding: 5rem 10%;
+            background: #ffffff;
+        }
+
+        #education h2 {
+            font-size: 2.5rem;
+            color: #333333;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        #education .subtitle {
+            text-align: center;
+            color: #64ffda;
+            margin-bottom: 3rem;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .education-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+        }
+
+        .education-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .education-card h3 {
+            color: #333333;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card h4 {
+            color: #64ffda;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-card p {
+            color: #555555;
+        }
+
+        /* Projects Section */
+        #work {
+            min-height: 100vh;
+            padding: 5rem 10%;
+            background: #f8f9fa;
+        }
+
+        #work h2 {
+            font-size: 2.5rem;
+            color: #333333;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 2rem;
+        }
+
+        .project-info h3 {
+            color: #333333;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-info p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #555555;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: 2px solid #64ffda;
+            color: #64ffda;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
         .project-links a:hover {
             background: rgba(100, 255, 218, 0.1);
         }
-        
+
         /* Contact Section */
         #contact {
-            padding: 3rem 0;
-            flex-direction: column;
-            text-align: center;
-            justify-content: flex-start;
-            min-height: auto;
+            min-height: 100vh;
+            padding: 5rem 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            background: #ffffff;
         }
-        
+
         .contact-img {
-            display: none; /* Remove image */
+            width: 500px;
         }
-        
+
+        .contact-img img {
+            width: 100%;
+            height: auto;
+        }
+
         .contact-form {
-            max-width: 500px;
-            margin-top: 2rem;
+            flex: 1;
+            max-width: 600px;
         }
 
         .contact-form h2 {
             font-size: 2.5rem;
-            color: var(--lightest-slate);
-            margin-bottom: 0.5rem;
+            color: #333333;
+            margin-bottom: 2rem;
         }
-        
-        .contact-form p {
-             margin-bottom: 2rem;
+
+        .form-group {
+            margin-bottom: 1.5rem;
         }
 
         .form-group input,
         .form-group textarea {
-            background: var(--navy);
-            border: 1px solid var(--light-navy);
-            color: var(--lightest-slate);
-            padding: 0.75rem;
+            width: 100%;
+            padding: 1rem;
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            color: #333333;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
         }
 
         .submit-btn {
-            background: var(--green);
-            color: var(--dark-navy);
+            padding: 1rem 2rem;
+            background: #64ffda;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
         }
 
         .submit-btn:hover {
@@ -425,295 +431,364 @@
 
         /* Footer */
         footer {
-            background: var(--dark-navy); /* Dark background */
-            padding: 1rem 0;
-            text-align: center;
-            border-top: none;
+            background: #f8f9fa;
+            padding: 3rem 10%;
+            border-top: 1px solid #e0e0e0;
         }
 
         .footer-content {
-            display: none; /* Only keep the bottom copyright/designer line */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
         }
-        
+
+        .footer-section h3 {
+            color: #333333;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            line-height: 1.8;
+            color: #555555;
+        }
+
+        .footer-section a {
+            color: #555555;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #64ffda;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64ffda;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #64ffda;
+            color: #ffffff;
+        }
+
         .footer-bottom {
-            padding: 0;
-            border-top: none;
-            font-size: 0.8rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+            color: #555555;
         }
-        
+
         .footer-bottom a {
-            color: var(--green);
+            color: #64ffda;
+            text-decoration: none;
         }
-        
-        /* --- Responsive Design for Mobile/Small Screens --- */
-        @media (max-width: 1080px) {
-            .left-sidebar {
-                position: relative; /* Make sidebar scrollable */
-                width: 100%;
-                max-width: 100%;
-                height: auto;
-                padding: 3rem 5%;
-                justify-content: flex-start;
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #home {
+                flex-direction: column-reverse;
+                padding-top: 8rem;
             }
 
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-                padding: 3rem 5%;
+            .hero-content h2 {
+                font-size: 2.5rem;
             }
 
-            .sidebar-header h1 {
-                font-size: 3rem;
-            }
-            
-            .sidebar-header p {
-                max-width: 100%;
+            .hero-img {
+                width: 300px;
+                height: 300px;
             }
 
-            .nav-links {
-                flex-direction: row; /* Horizontal navigation links for mobile */
-                gap: 1.5rem;
-                overflow-x: auto;
-                padding-bottom: 1rem;
-                border-bottom: 1px solid var(--light-navy);
-            }
-            
-            .nav-links a {
-                padding-left: 0;
-            }
-            
-            .nav-links a::before {
-                display: none; /* Remove the link indicator line */
-            }
-
-            .sidebar-footer {
-                padding-top: 2rem;
-                padding-bottom: 0;
-            }
-            
-            .project-card {
-                flex-direction: column; /* Stack image and content vertically */
-            }
-
-            .project-card:nth-child(even) {
+            #about {
                 flex-direction: column;
             }
 
-            .project-card img,
-            .project-info {
+            .about-img {
                 width: 100%;
-                border-radius: 4px;
+                max-width: 400px;
             }
-            
-            .project-card:nth-child(even) img {
-                border-radius: 4px 4px 0 0;
-            }
-        }
-        
-        /* Mobile: Further adjustments for very small screens */
-        @media (max-width: 768px) {
-            .sidebar-header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .sidebar-header h2 {
-                font-size: 1.2rem;
-            }
-            
-            .skills-grid {
-                column-count: 2; /* 2 columns for skills in very small screens */
-                display: block;
-            }
-            
-            .skill-card {
-                width: 50%;
-                display: inline-block;
-            }
-        }
-        
-        /* Ensure all sections fade in correctly on the right side */
-        .main-content section > * {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        /* Add a class to visible elements */
-        .main-content section > .is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Remove original scroll-reveal styles that target cards/elements directly */
-        .skill-card, .education-card, .project-card {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-            transition: none !important;
-        }
 
+            #contact {
+                flex-direction: column;
+            }
+
+            .contact-img {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .projects-grid,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="left-sidebar">
-        <header class="sidebar-header">
-            <h1>Sumit Hajare</h1>
-            <h2>Embedded Systems & IoT Developer</h2>
-            <p>I'm an IoT and Embedded Systems enthusiast with hands-on experience in developing automation solutions using ESP32, Arduino, and Raspberry Pi.</p>
-            
-            <ul class="nav-links">
-                <li><a href="#about" class="active">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#work">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </header>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home" class="logo">Sumit Hajare</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#work">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <footer class="sidebar-footer">
-             <div class="social-links">
-                <a href="https://linkedin.com/in/sumithajare3b562132b" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/sumithajare11" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="mailto:sumithajare2003@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+917057353171" aria-label="Phone"><i class="fas fa-phone"></i></a>
-            </div>
-             <div class="footer-bottom">
-                <p>Designed with ❤️ by <a href="https://linkedin.com/in/sumithajare3b562132b">Sumit Hajare</a></p>
-            </div>
-        </footer>
-    </div>
-    
-    <main class="main-content">
-        <section id="home" style="padding: 0; margin-bottom: 2rem;"></section>
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-content">
+            <h1>Hi There, I'm Sumit Hajare</h1>
+            <h2>Sumit Hajare</h2>
+            <p class="typing">i am into <span id="typed"></span></p>
+            <a href="#about" class="cta-btn">About Me</a>
+        </div>
+        <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" alt="Sumit Hajare">
+        </div>
+    </section>
 
-        <section id="about">
-            <h2 class="section-header"><span class="number">01.</span> About Me</h2>
-            <div class="about-content">
-                <p>Hello! I'm Sumit, and I'm deeply passionate about **Embedded Systems & IoT Development**. My journey began with a strong foundation in Electronics & Telecommunication Engineering from Shivaji University.</p>
-                
-                <p>I specialize in engineering real-time automation and monitoring solutions using **ESP32, Arduino, and Raspberry Pi**. My focus is on robust sensor interfacing, implementing efficient communication protocols like I2C, SPI, and UART, and designing systems that connect physical devices to the digital world.</p>
-                
-                <p>Over the years, I've delivered projects ranging from advanced railway safety systems to smart home automation, achieving tangible results like a 95% anomaly detection accuracy and reducing energy consumption by 30% through intelligent scheduling. I'm proficient in **C, Python, and Embedded C**, and I leverage cloud platforms like **MQTT, ThingSpeak, and Blynk** for seamless data logging and control.</p>
-                
-                <p>I am currently seeking opportunities where I can apply my expertise in microcontrollers (AVR, ARM) and my enthusiasm for new technologies to build impactful, scalable IoT solutions. Let's build something smart together!</p>
-                
-                <p class="email">Email: <a href="mailto:sumithajare2003@gmail.com">sumithajare2003@gmail.com</a></p>
-                <a href="#" class="cta-btn">View Full Resume</a>
-            </div>
-        </section>
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Sumit Hajare">
+        </div>
+        <div class="about-content">
+            <h2>About Me</h2>
+            <h3>I'm Sumit</h3>
+            <h4>Embedded Systems & IoT Developer</h4>
+            <p>I'm an IoT and Embedded Systems enthusiast with hands-on experience in developing automation solutions using ESP32, Arduino, and Raspberry Pi. I specialize in real-time monitoring systems, sensor interfacing, and cloud-based data logging.</p>
+            <p>With a strong foundation in Electronics & Telecommunication Engineering, I've worked on projects ranging from railway safety systems to smart home automation. I'm proficient in C, Python, and Embedded C, with expertise in MQTT, ThingSpeak, and various IoT platforms.</p>
+            <p>I'm constantly exploring new technologies in embedded systems, working with microcontroller architectures (AVR, ARM), and implementing efficient communication protocols (I2C, SPI, UART, PWM).</p>
+            <p class="email">email : sumithajare2003@gmail.com</p>
+            <a href="#" class="cta-btn">Resume</a>
+        </div>
+    </section>
 
-        <section id="skills">
-            <h2 class="section-header"><span class="number">02.</span> Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-card"><h3>C</h3></div>
-                <div class="skill-card"><h3>Embedded C</h3></div>
-                <div class="skill-card"><h3>Python</h3></div>
-                <div class="skill-card"><h3>MATLAB</h3></div>
-                
-                <div class="skill-card"><h3>Arduino</h3></div>
-                <div class="skill-card"><h3>ESP32</h3></div>
-                <div class="skill-card"><h3>Raspberry Pi</h3></div>
-                <div class="skill-card"><h3>AVR / ARM Architectures</h3></div>
-
-                <div class="skill-card"><h3>MQTT</h3></div>
-                <div class="skill-card"><h3>ThingSpeak</h3></div>
-                <div class="skill-card"><h3>Blynk</h3></div>
-                <div class="skill-card"><h3>I2C, SPI, UART, PWM</h3></div>
-                
-                <div class="skill-card"><h3>Git</h3></div>
-                <div class="skill-card"><h3>GitHub</h3></div>
-            </div>
-        </section>
-
-        <section id="education">
-            <h2 class="section-header"><span class="number">03.</span> My Education</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <h3>B.Tech in Electronics & Telecommunication Engineering</h3>
-                    <h4>Shivaji University, Kolhapur | Aug 2021 – May 2025 (Expected)</h4>
-                    <p>Relevant Coursework: Microcontrollers, Digital Signal Processing, IoT Systems, Communication Networks.</p>
-                    <p>CGPA: 7.0</p>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills & Abilities</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
                 </div>
-                <div class="education-card">
-                    <h3>Higher Secondary Certificate (HSC) in Science</h3>
-                    <h4>Maharashtra State Board | Jul 2019 – Feb 2021</h4>
-                    <p>Focus on Physics, Chemistry, and Mathematics.</p>
-                    <p>Percentage: 84%</p>
+                <h3>C</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3>Embedded C</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3>Arduino</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-wifi"></i>
+                </div>
+                <h3>ESP32</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-raspberry-pi"></i>
+                </div>
+                <h3>Raspberry Pi</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>MQTT</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>ThingSpeak</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Blynk</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-git-alt"></i>
+                </div>
+                <h3>Git</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>MATLAB</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>Github</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>My Education</h2>
+        <p class="subtitle">Education is not the learning of facts, but the training of the mind to think.</p>
+        <div class="education-grid">
+            <div class="education-card">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=300&fit=crop" alt="Shivaji University">
+                <h3>Shivaji University, Kolhapur</h3>
+                <h4>Aug 2021 – May 2025 | Pursuing B.Tech in Electronics & Telecommunication Engineering</h4>
+                <p>CGPA: 7.0</p>
+            </div>
+            <div class="education-card">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=300&fit=crop" alt="School">
+                <h3>Maharashtra State Board</h3>
+                <h4>Jul 2019 – Feb 2021 | Completed Higher Secondary Certificate (HSC) in Science</h4>
+                <p>Percentage: 84%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="work">
+        <h2>Projects Made</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&h=400&fit=crop" alt="Railway Accident Prevention System">
+                <div class="project-info">
+                    <h3>Railway Accident Prevention System</h3>
+                    <p>Engineered real-time railway safety system using multiple sensors and microcontrollers to detect track anomalies. Integrated GPS and GSM modules for instant location tracking and automated alert generation. Achieved 95% accuracy in anomaly detection.</p>
+                    <div class="project-links">
+                        <a href="#">Code</a>
+                        <a href="#">Visit</a>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section id="work">
-            <h2 class="section-header"><span class="number">04.</span> Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&h=400&fit=crop" alt="Railway Accident Prevention System">
-                    <div class="project-info">
-                        <h3>Railway Accident Prevention System</h3>
-                        <p>Engineered a real-time railway safety system using multiple sensors (vibration, obstacle) and microcontrollers to detect track anomalies. Integrated **GPS and GSM modules** for instant location tracking and automated alert generation, achieving **95% accuracy** in anomaly detection.</p>
-                        <div class="project-links">
-                            <a href="#">Code</a>
-                            <a href="#">Visit</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop" alt="Automated Home Monitoring System">
-                    <div class="project-info">
-                        <h3>Automated Home Monitoring System</h3>
-                        <p>Developed a smart home automation system with temperature, humidity, and motion sensors for remote monitoring via the cloud. Created a mobile application interface for real-time control, resulting in a **30% reduction** in energy consumption through intelligent scheduling.</p>
-                        <div class="project-links">
-                            <a href="#">Code</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=400&fit=crop" alt="IoT Cloud Monitoring">
-                    <div class="project-info">
-                        <h3>Industrial IoT Cloud Monitoring</h3>
-                        <p>Implemented a cloud-based data logging and visualization dashboard for predictive maintenance analytics. Leveraged the **MQTT protocol** for efficient data transmission from industrial sensors and **ThingSpeak** for real-time data visualization and alerts.</p>
-                        <div class="project-links">
-                            <a href="#">Code</a>
-                            <a href="#">Visit</a>
-                        </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop" alt="Automated Home Monitoring System">
+                <div class="project-info">
+                    <h3>Automated Home Monitoring System</h3>
+                    <p>Developed smart home automation system with temperature, humidity, and motion sensors for remote monitoring. Created mobile application interface for real-time control. Reduced energy consumption by 30% through intelligent scheduling.</p>
+                    <div class="project-links">
+                        <a href="#">Code</a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section id="contact">
-            <h2 class="section-header"><span class="number">05.</span> Get In Touch</h2>
-            <p>I'm currently looking for new opportunities in the IoT and Embedded Systems space. Whether you have a project idea, a job offer, or just want to connect, feel free to reach out! My inbox is always open.</p>
-
-            <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <input type="text" placeholder="Name" required>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=400&fit=crop" alt="IoT Cloud Monitoring">
+                <div class="project-info">
+                    <h3>IoT Cloud Monitoring Dashboard</h3>
+                    <p>Implemented cloud-based data logging and visualization dashboard for predictive maintenance analytics. Integrated MQTT protocol for efficient data transmission and ThingSpeak for real-time monitoring.</p>
+                    <div class="project-links">
+                        <a href="#">Code</a>
+                        <a href="#">Visit</a>
                     </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Phone (Optional)">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Say Hello!</button>
-                </form>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer>
-             <div class="footer-bottom" style="text-align: left; margin-top: 5rem;">
-                <p>Inspired by the popular B4B/Brittany Chiang portfolio design.</p>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-img">
+            <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=600&h=600&fit=crop" alt="Contact">
+        </div>
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sumit's Portfolio</h3>
+                <p>Thank you for visiting my personal portfolio website. Connect with me over socials.</p>
+                <p>Keep Rising 🚀. Connect with me over live chat!</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/sumithajare3b562132b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/sumithajare11" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:sumithajare2003@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+917057353171"><i class="fas fa-phone"></i></a>
+                </div>
             </div>
-        </footer>
-    </main>
+            <div class="footer-section">
+                <h3>quick links</h3>
+                <a href="#home">home</a>
+                <a href="#about">about</a>
+                <a href="#skills">skills</a>
+                <a href="#education">education</a>
+                <a href="#work">work</a>
+            </div>
+            <div class="footer-section">
+                <h3>contact info</h3>
+                <p><i class="fas fa-phone"></i> +91-7057353171</p>
+                <p><i class="fas fa-envelope"></i> sumithajare2003@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Kolhapur, Maharashtra, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Designed with ❤️ by <a href="https://linkedin.com/in/sumithajare3b562132b">Sumit Hajare</a></p>
+        </div>
+    </footer>
 
     <script>
-        // --- Typing Animation (Retained) ---
+        // Typing Animation
         const words = ['IoT', 'Embedded Systems', 'Automation', 'Real-Time Monitoring'];
         let wordIndex = 0;
         let charIndex = 0;
@@ -723,10 +798,8 @@
         const delayBetweenWords = 2000;
 
         function type() {
-            const typedElement = document.getElementById('typed');
-            if (!typedElement) return; // Prevent error if element is missing
-
             const currentWord = words[wordIndex];
+            const typedElement = document.getElementById('typed');
 
             if (isDeleting) {
                 typedElement.textContent = currentWord.substring(0, charIndex - 1);
@@ -748,81 +821,52 @@
             const speed = isDeleting ? deletingSpeed : typingSpeed;
             setTimeout(type, speed);
         }
-        
-        // Start typing animation (Note: The "typing" element is now within the ABOUT section text block, not the hero)
-        // type(); // Keeping this commented out as the Hero section where it was originally placed is now styled differently.
 
-        // --- Smooth Scroll & Active Nav ---
-        const navLinks = document.querySelectorAll('.nav-links a');
-        const sections = document.querySelectorAll('.main-content section');
+        // Start typing animation
+        type();
 
-        // Function to update the active link
-        function updateActiveLink(entries) {
-            entries.forEach(entry => {
-                const id = entry.target.id;
-                const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
-
-                if (entry.isIntersecting && activeLink) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    activeLink.classList.add('active');
+        // Smooth scroll with offset for fixed nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
-        }
-        
-        // Initialize IntersectionObserver for active link highlighting
-        const navObserverOptions = {
-            root: document.querySelector('.main-content'),
-            threshold: 0.1, // Trigger when 10% of the section is visible
-            rootMargin: '0px 0px -50% 0px'
-        };
-        
-        const navObserver = new IntersectionObserver(updateActiveLink, navObserverOptions);
-        sections.forEach(section => {
-             // Only observe sections with actual content
-            if (section.id !== 'home') {
-                navObserver.observe(section);
-            }
         });
-        
-        // Form submission (Retained)
+
+        // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! I will get back to you soon.');
             this.reset();
         });
 
-        // --- Scroll Reveal Animation (Modified for the new layout) ---
-        const revealObserverOptions = {
-            root: document.querySelector('.main-content'), // Observe scrolling in the main content area
+        // Scroll reveal animation
+        const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
         };
 
-        const revealObserver = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Apply reveal effect to ALL immediate children of the section
-                    Array.from(entry.target.children).forEach((el, index) => {
-                        // Exclude the section header/title as it's sticky/already visible
-                        if (!el.classList.contains('section-header')) {
-                             setTimeout(() => {
-                                el.classList.add('is-visible');
-                            }, index * 100); // Stagger the reveal slightly
-                        }
-                    });
-                    // Stop observing after it has been revealed
-                    revealObserver.unobserve(entry.target); 
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, revealObserverOptions);
+        }, observerOptions);
 
-        // Observe all main content sections for reveal
-        document.querySelectorAll('.main-content section').forEach(el => {
-            if (el.id !== 'home') {
-                revealObserver.observe(el);
-            }
+        document.querySelectorAll('.skill-card, .education-card, .project-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
         });
-
     </script>
 </body>
 </html>
