@@ -167,7 +167,7 @@
         }
 
         .about-content .email {
-            color: #545d8f;
+            color: #3e6ed6;
             margin: 1rem 0;
         }
 
