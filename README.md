@@ -209,12 +209,12 @@
 
         .skill-icon {
             font-size: 3rem;
-            color: #545d8f;
+            color: #3b3028;
             margin-bottom: 1rem;
         }
 
         .skill-card h3 {
-            color: #0d0b0b;
+            color: #3b3028;
             font-size: 1rem;
         }
 
