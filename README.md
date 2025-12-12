@@ -331,7 +331,7 @@
         }
 
         .project-info h3 {
-            color: #0d0b0b;
+            color: #3b3028;
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
@@ -350,8 +350,8 @@
         .project-links a {
             padding: 0.5rem 1.5rem;
             background: transparent;
-            border: 2px solid #545d8f;
-            color: #64ffda;
+            border: 2px solid #3b3028;
+            color: #3b3028;
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s;
