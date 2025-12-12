@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,7 +41,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #c47254;
+            color: #365178;
             text-decoration: none;
         }
 
@@ -80,7 +80,7 @@
 
         .hero-content h2 {
             font-size: 4rem;
-            color: #0d0b0b;
+            color: #ba7641;
             margin-bottom: 1rem;
         }
 
@@ -110,7 +110,7 @@
             height: 500px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid #1a120f;
+            border: 5px solid #3b3028;
         }
 
         .hero-img img {
