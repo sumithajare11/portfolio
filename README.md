@@ -110,7 +110,7 @@
             height: 500px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid #3b3028;
+            border: 5px solid #0d0b0b;
         }
 
         .hero-img img {
@@ -567,7 +567,7 @@
             <a href="#about" class="cta-btn">About Me</a>
         </div>
         <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" alt="Sumit Hajare">
+            <img src="https://media.licdn.com/dms/image/v2/D4D22AQFjupgqPXdqQg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1692686262219?e=2147483647&v=beta&t=Eep7g_xoZT49NtdpI6eatJeBVadETR2Zd0zkBn6GWpM" alt="Sumit Hajare">
         </div>
     </section>
 
