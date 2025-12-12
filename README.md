@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,7 +40,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #64ffda;
+            color: #545d8f;
             text-decoration: none;
         }
 
@@ -59,7 +58,7 @@
         }
 
         .nav-links a:hover {
-            color: #64ffda;
+            color: #545d8f;
         }
 
         /* Hero Section */
@@ -74,7 +73,7 @@
 
         .hero-content h1 {
             font-size: 1.2rem;
-            color: #64ffda;
+            color: #545d8f;
             margin-bottom: 1rem;
         }
 
@@ -86,7 +85,7 @@
 
         .hero-content .typing {
             font-size: 1.5rem;
-            color: #64ffda;
+            color: #545d8f;
             margin-bottom: 2rem;
         }
 
@@ -94,8 +93,8 @@
             display: inline-block;
             padding: 1rem 2rem;
             background: transparent;
-            border: 2px solid #64ffda;
-            color: #64ffda;
+            border: 2px solid #545d8f;
+            color: #545d8f;
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s;
@@ -110,7 +109,7 @@
             height: 500px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid #64ffda;
+            border: 5px solid #545d8f;
         }
 
         .hero-img img {
@@ -133,7 +132,7 @@
             height: 400px;
             border-radius: 10px;
             overflow: hidden;
-            border: 3px solid #64ffda;
+            border: 3px solid #545d8f;
         }
 
         .about-img img {
@@ -150,7 +149,7 @@
 
         .about-content h3 {
             font-size: 1.8rem;
-            color: #64ffda;
+            color: #545d8f;
             margin-bottom: 1rem;
         }
 
@@ -167,7 +166,7 @@
         }
 
         .about-content .email {
-            color: #64ffda;
+            color: #545d8f;
             margin: 1rem 0;
         }
 
@@ -209,7 +208,7 @@
 
         .skill-icon {
             font-size: 3rem;
-            color: #64ffda;
+            color: #545d8f;
             margin-bottom: 1rem;
         }
 
@@ -234,7 +233,7 @@
 
         #education .subtitle {
             text-align: center;
-            color: #64ffda;
+            color: #545d8f;
             margin-bottom: 3rem;
         }
 
@@ -275,7 +274,7 @@
         }
 
         .education-card h4 {
-            color: #64ffda;
+            color: #545d8f;
             font-size: 1rem;
             margin-bottom: 1rem;
         }
@@ -351,7 +350,7 @@
             padding: 0.5rem 1.5rem;
             background: transparent;
             border: 2px solid #64ffda;
-            color: #64ffda;
+            color: #545d8f;
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s;
@@ -414,7 +413,7 @@
 
         .submit-btn {
             padding: 1rem 2rem;
-            background: #64ffda;
+            background: #545d8f;
             color: #ffffff;
             border: none;
             border-radius: 5px;
@@ -460,7 +459,7 @@
         }
 
         .footer-section a:hover {
-            color: #64ffda;
+            color: #545d8f;
         }
 
         .social-links {
@@ -478,12 +477,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #64ffda;
+            color: #545d8f;
             transition: all 0.3s;
         }
 
         .social-links a:hover {
-            background: #64ffda;
+            background: #545d8f;
             color: #ffffff;
         }
 
@@ -495,7 +494,7 @@
         }
 
         .footer-bottom a {
-            color: #64ffda;
+            color: #545d8f;
             text-decoration: none;
         }
 
