@@ -672,13 +672,13 @@
         <p class="subtitle">Education is not the learning of facts, but the training of the mind to think.</p>
         <div class="education-grid">
             <div class="education-card">
-                <img src="https://arc-instruments.co.uk/case-studies/shivaji-university/" alt="Shivaji University">
+                <img src="[https://arc-instruments.co.uk/case-studies/shivaji-university/](https://www.kolhapurtourism.org/wp-content/uploads/2021/09/Shivaji-University-Kolhapur-Maharashtra-3-scaled.jpg)" alt="Shivaji University">
                 <h3>Shivaji University, Kolhapur</h3>
                 <h4>Aug 2021 – May 2025 | Pursuing B.Tech in Electronics & Telecommunication Engineering</h4>
                 <p>CGPA: 7.0</p>
             </div>
             <div class="education-card">
-                <img src="https://hscinspire.mahahsscboard.in/" alt="School">
+                <img src="https://hscinspire.mahahsscboard.in/mahalogo.png" alt="School">
                 <h3>Maharashtra State Board</h3>
                 <h4>Jul 2019 – Feb 2021 | Completed Higher Secondary Certificate (HSC) in Science</h4>
                 <p>Percentage: 84%</p>
@@ -765,15 +765,15 @@
                 </div>
             </div>
             <div class="footer-section">
-                <h3>quick links</h3>
-                <a href="#home">home</a>
-                <a href="#about">about</a>
-                <a href="#skills">skills</a>
-                <a href="#education">education</a>
-                <a href="#work">work</a>
+                <h3>Quick Links</h3>
+                <a href="#Home">Home</a>
+                <a href="#About">About</a>
+                <a href="#Skills">Skills</a>
+                <a href="#Education">Education</a>
+                <a href="#Work">Work</a>
             </div>
             <div class="footer-section">
-                <h3>contact info</h3>
+                <h3>Contact Info</h3>
                 <p><i class="fas fa-phone"></i> +91-7057353171</p>
                 <p><i class="fas fa-envelope"></i> sumithajare2003@gmail.com</p>
                 <p><i class="fas fa-map-marker-alt"></i> Kolhapur, Maharashtra, India</p>
