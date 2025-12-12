@@ -110,7 +110,7 @@
             height: 500px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid #0d0b0b;
+            border: 5px solid #c5c7c9;
         }
 
         .hero-img img {
@@ -129,11 +129,11 @@
         }
 
         .about-img {
-            width: 400px;
-            height: 400px;
+            width: 350px;
+            height: 350px;
             border-radius: 10px;
             overflow: hidden;
-            border: 3px solid #64ffda;
+            border: 3px solid;
         }
 
         .about-img img {
