@@ -548,12 +548,12 @@
     <nav>
         <a href="#home" class="logo">Sumit Hajare</a>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#work">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Kkills">Skills</a></li>
+            <li><a href="#Education">Education</a></li>
+            <li><a href="#Work">Projects</a></li>
+            <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -579,7 +579,7 @@
             <h2>About Me</h2>
             <h3>I'm Sumit</h3>
             <h4>Embedded Systems & IoT Developer</h4>
-            <p>I'm an IoT and Embedded Systems enthusiast with hands-on experience in developing automation solutions using ESP32, Arduino, and Raspberry Pi. I specialize in real-time monitoring systems, sensor interfacing, and cloud-based data logging.</p>
+            <p>I'm an IoT and Embedded Systems enthusiast with hands-on experience in developing automation solutions using ESP32, ESP8266, Arduino, and Raspberry Pi. I specialize in real-time monitoring systems, sensor interfacing, and cloud-based data logging.</p>
             <p>With a strong foundation in Electronics & Telecommunication Engineering, I've worked on projects ranging from railway safety systems to smart home automation. I'm proficient in C, Python, and Embedded C, with expertise in MQTT, ThingSpeak, and various IoT platforms.</p>
             <p>I'm constantly exploring new technologies in embedded systems, working with microcontroller architectures (AVR, ARM), and implementing efficient communication protocols (I2C, SPI, UART, PWM).</p>
             <p class="email">email : sumithajare2003@gmail.com</p>
@@ -672,13 +672,13 @@
         <p class="subtitle">Education is not the learning of facts, but the training of the mind to think.</p>
         <div class="education-grid">
             <div class="education-card">
-                <img src="[https://arc-instruments.co.uk/case-studies/shivaji-university/](https://www.kolhapurtourism.org/wp-content/uploads/2021/09/Shivaji-University-Kolhapur-Maharashtra-3-scaled.jpg)" alt="Shivaji University">
+                <img src="[https://arc-instruments.co.uk/case-studies/shivaji-university/](https://www.kolhapurtourism.org/wp-content/uploads/2021/09/Shivaji-University-Kolhapur-Maharashtra-3-scaled.jpg)/" alt="Shivaji University">
                 <h3>Shivaji University, Kolhapur</h3>
                 <h4>Aug 2021 – May 2025 | Pursuing B.Tech in Electronics & Telecommunication Engineering</h4>
                 <p>CGPA: 7.0</p>
             </div>
             <div class="education-card">
-                <img src="https://hscinspire.mahahsscboard.in/mahalogo.png" alt="School">
+                <img src="https://hscinspire.mahahsscboard.in/mahalogo.png/" alt="School">
                 <h3>Maharashtra State Board</h3>
                 <h4>Jul 2019 – Feb 2021 | Completed Higher Secondary Certificate (HSC) in Science</h4>
                 <p>Percentage: 84%</p>
