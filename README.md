@@ -52,7 +52,7 @@
         }
 
         .nav-links a {
-            color: ##0d0b0b;
+            color: #0d0b0b;
             text-decoration: none;
             font-size: 0.95rem;
             transition: color 0.3s;
@@ -80,7 +80,7 @@
 
         .hero-content h2 {
             font-size: 4rem;
-            color: ##0d0b0b;
+            color: #0d0b0b;
             margin-bottom: 1rem;
         }
 
