@@ -556,17 +556,16 @@
             <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
-
+</div>
+<h1>Hi There, I'm Sumit Hajare</h1>
     <!-- Hero Section -->
     <section id="home">
-        <div class="hero-content">
-            <h1>Hi There, I'm Sumit Hajare</h1>
+        <div class="hero-content"> 
             <h2>Sumit Hajare</h2>
             <p class="typing">I Am Into <span id="typed"></span></p>
             <a href="#about" class="cta-btn">About Me</a>
         </div>
-        <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" alt="Sumit Hajare">
+        <div class="hero-img">          <imgsrc="https://d25thuhsbcr6yb.cloudfront.net/m/s/32433/32423596/a-0005.jpg" alt="Sumit Hajare">
     </section>
 
     <!-- About Section -->
