@@ -567,7 +567,7 @@
             <a href="#about" class="cta-btn">About Me</a>
         </div>
         <div class="hero-img">
-            <img src="https://media.licdn.com/dms/image/v2/D4D22AQFjupgqPXdqQg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1692686262219?e=2147483647&v=beta&t=Eep7g_xoZT49NtdpI6eatJeBVadETR2Zd0zkBn6GWpM" alt="Sumit Hajare">
+            <imgsrc="https://media.licdn.com/dms/image/v2/D4D22AQFjupgqPXdqQg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1692686262219?e=2147483647&v=beta&t=Eep7g_xoZT49NtdpI6eatJeBVadETR2Zd0zkBn6GWpM" alt="Sumit Hajare">
         </div>
     </section>
 
