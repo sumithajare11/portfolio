@@ -567,7 +567,6 @@
         </div>
         <div class="hero-img">
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" alt="Sumit Hajare">
-        </div>
     </section>
 
     <!-- About Section -->
@@ -576,7 +575,7 @@
             <h2>About Me</h2>
             <div class="about-img">
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Sumit Hajare">
-            </div>
+            
             <h3>I'm Sumit</h3>
             <h4>Embedded Systems & IoT Developer</h4>
             <p>I'm an IoT and Embedded Systems enthusiast with hands-on experience in developing automation solutions using ESP32, ESP8266, Arduino, and Raspberry Pi. I specialize in real-time monitoring systems, sensor interfacing, and cloud-based data logging.</p>
