@@ -64,7 +64,12 @@
 
         /* Hero Section */
         #home {
-            
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+            gap: 4rem;
         }
 
         .hero-content h1 {
@@ -100,19 +105,6 @@
             background: rgba(100, 255, 218, 0.1);
         }
 
-        .hero-img {
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid #c5c7c9;
-        }
-
-        .hero-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
 
         /* About Section */
         #about {
