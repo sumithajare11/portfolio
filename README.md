@@ -574,7 +574,7 @@
     <!-- About Section -->
     <section id="about">
         <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Sumit Hajare">
+            <img src=""D:\Images\photo.jpg"" alt="Sumit Hajare">
         </div>
         <div class="about-content">
             <h2>About Me</h2>
