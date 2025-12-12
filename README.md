@@ -19,7 +19,7 @@
 
         body {
             background: #ffffff;
-            color: #333333;
+            color: #0d0b0b;
             overflow-x: hidden;
         }
 
@@ -52,7 +52,7 @@
         }
 
         .nav-links a {
-            color: #333333;
+            color: #0d0b0b;
             text-decoration: none;
             font-size: 0.95rem;
             transition: color 0.3s;
@@ -80,7 +80,7 @@
 
         .hero-content h2 {
             font-size: 4rem;
-            color: #333333;
+            color: #0d0b0b;
             margin-bottom: 1rem;
         }
 
@@ -144,7 +144,7 @@
 
         .about-content h2 {
             font-size: 2.5rem;
-            color: #333333;
+            color: #0d0b0b;
             margin-bottom: 1rem;
         }
 
@@ -156,7 +156,7 @@
 
         .about-content h4 {
             font-size: 1.3rem;
-            color: #333333;
+            color: #0d0b0b;
             margin-bottom: 1rem;
         }
 
@@ -180,7 +180,7 @@
 
         #skills h2 {
             font-size: 2.5rem;
-            color: #333333;
+            color: #0d0b0b;
             text-align: center;
             margin-bottom: 3rem;
         }
@@ -214,7 +214,7 @@
         }
 
         .skill-card h3 {
-            color: #333333;
+            color: #0d0b0b;
             font-size: 1rem;
         }
 
@@ -227,7 +227,7 @@
 
         #education h2 {
             font-size: 2.5rem;
-            color: #333333;
+            color: #0d0b0b;
             text-align: center;
             margin-bottom: 1rem;
         }
@@ -269,7 +269,7 @@
         }
 
         .education-card h3 {
-            color: #333333;
+            color: #0d0b0b;
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
@@ -293,7 +293,7 @@
 
         #work h2 {
             font-size: 2.5rem;
-            color: #333333;
+            color: #0d0b0b;
             text-align: center;
             margin-bottom: 3rem;
         }
@@ -331,7 +331,7 @@
         }
 
         .project-info h3 {
-            color: #333333;
+            color: #0d0b0b;
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
@@ -388,7 +388,7 @@
 
         .contact-form h2 {
             font-size: 2.5rem;
-            color: #333333;
+            color: #0d0b0b;
             margin-bottom: 2rem;
         }
 
@@ -402,7 +402,7 @@
             padding: 1rem;
             background: #f8f9fa;
             border: 1px solid #e0e0e0;
-            color: #333333;
+            color: #0d0b0b;
             border-radius: 5px;
             font-family: inherit;
         }
@@ -442,7 +442,7 @@
         }
 
         .footer-section h3 {
-            color: #333333;
+            color: #0d0b0b;
             margin-bottom: 1rem;
         }
 
@@ -673,13 +673,13 @@
         <p class="subtitle">Education is not the learning of facts, but the training of the mind to think.</p>
         <div class="education-grid">
             <div class="education-card">
-                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=300&fit=crop" alt="Shivaji University">
+                <img src="https://arc-instruments.co.uk/case-studies/shivaji-university/" alt="Shivaji University">
                 <h3>Shivaji University, Kolhapur</h3>
                 <h4>Aug 2021 – May 2025 | Pursuing B.Tech in Electronics & Telecommunication Engineering</h4>
                 <p>CGPA: 7.0</p>
             </div>
             <div class="education-card">
-                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=300&fit=crop" alt="School">
+                <img src="https://hscinspire.mahahsscboard.in/" alt="School">
                 <h3>Maharashtra State Board</h3>
                 <h4>Jul 2019 – Feb 2021 | Completed Higher Secondary Certificate (HSC) in Science</h4>
                 <p>Percentage: 84%</p>
