@@ -1,4 +1,4 @@
-
+<!DOCTYPE html
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,7 +41,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #365178;
+            color: #0d0b0b;
             text-decoration: none;
         }
 
@@ -678,7 +678,7 @@
                 <h4>Aug 2021 – May 2025 | B.Tech in Electronics & Telecommunication Engineering</h4>
                 <p>CGPA: 7.0</p>
             </div>
-            <div class="education-card">                <imgsrc="https://hscinspire.mahahsscboard.in/mahalogo.png" alt="School">
+            <div class="education-card">                <img src="https://hscinspire.mahahsscboard.in/mahalogo.png" alt="School">
                 <h3>Maharashtra State Board</h3>
                 <h4>Jul 2019 – Feb 2021 | Completed Higher Secondary Certificate (HSC) in Science</h4>
                 <p>Percentage: 84%</p>
@@ -728,7 +728,7 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="contact-img">
-            <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=600&h=600&fit=crop" alt="Contact">
+            
         </div>
         <div class="contact-form">
             <h2>Get in Touch</h2>
