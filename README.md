@@ -675,7 +675,7 @@
             <div class="education-card">
                 <img src="https://media.getmyuni.com/azure/college-images-test/shivaji-university-suk-kolhapur/3876586d0ba040b5a33bb7b65d86b9c4.jpeg" alt="Shivaji University">
                 <h3>Shivaji University, Kolhapur</h3>
-                <h4>Aug 2021 – May 2025 | Pursuing B.Tech in Electronics & Telecommunication Engineering</h4>
+                <h4>Aug 2021 – May 2025 | B.Tech in Electronics & Telecommunication Engineering</h4>
                 <p>CGPA: 7.0</p>
             </div>
             <div class="education-card">                <imgsrc="https://hscinspire.mahahsscboard.in/mahalogo.png" alt="School">
