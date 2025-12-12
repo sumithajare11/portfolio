@@ -1,4 +1,4 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +6,21 @@
     <title>Portfolio | Sumit Hajare</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* --- General Reset & Variables --- */
+        :root {
+            --dark-navy: #0a192f;      /* Main Background Color (Dark/Black) */
+            --navy: #112240;           /* Secondary Background/Card Color */
+            --lightest-slate: #ccd6f6; /* Main Body Text Color (Light) */
+            --slate: #8892b0;          /* Secondary Text Color */
+            --green: #64ffda;          /* Accent Color (Keep your bright teal) */
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            /* Using a common modern system font stack */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         html {
@@ -18,396 +28,313 @@
         }
 
         body {
-            background: #ffffff;
-            color: #0d0b0b;
+            background: var(--dark-navy);
+            color: var(--slate);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: block; 
             overflow-x: hidden;
+            padding: 0 5%; /* Add overall horizontal padding */
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 5%;
+        /* --- New Layout Structure (Desktop: Two Columns) --- */
+        .page-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #0d0b0b;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
             gap: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .left-sidebar {
+            /* Fixed sidebar for desktop */
+            position: sticky; 
+            top: 0;
+            width: 40%;
+            max-width: 400px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            padding-top: 5rem;
+            padding-bottom: 3rem;
+        }
+
+        .main-content {
+            /* Scrollable content on the right */
+            width: 60%;
+            padding: 5rem 0 3rem 0;
+        }
+
+        /* --- Left Sidebar Content Styling --- */
+        .sidebar-header {
+            /* Adjusted for a compact, vertical look */
+            padding: 0;
+        }
+
+        .sidebar-header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--lightest-slate);
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--lightest-slate);
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-header p {
+            font-size: 1rem;
+            color: var(--slate);
+            max-width: 400px;
+            margin-bottom: 4rem;
+        }
+        
+        /* Navigation Links in Sidebar */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: auto; /* Push social links to the bottom */
+        }
+
+        .nav-links li {
+            width: fit-content; /* Ensure the line indicator only stretches to the text length */
         }
 
         .nav-links a {
-            color: #0d0b0b;
+            color: var(--slate);
             text-decoration: none;
             font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.1em; /* Increased letter spacing */
+            text-transform: uppercase;
             transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #545d8f;
-        }
-
-        /* Hero Section */
-        #home {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 10%;
-            gap: 4rem;
-        }
-
-        .hero-content h1 {
-            font-size: 1.2rem;
-            color: #545d8f;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content h2 {
-            font-size: 4rem;
-            color: #545d8f;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content .typing {
-            font-size: 1.5rem;
-            color: #ba7641;
-            margin-bottom: 2rem;
-        }
-
-        .cta-btn {
             display: inline-block;
-            padding: 1rem 2rem;
-            background: transparent;
-            border: 2px solid #545d8f;
-            color: #545d8f;
-            text-decoration: none;
-            border-radius: 5px;
+            position: relative;
+            padding-left: 25px; /* Space for the line indicator */
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px; /* Default length */
+            height: 1px;
+            background-color: var(--slate);
             transition: all 0.3s;
         }
 
-        .cta-btn:hover {
-            background: rgba(100, 255, 218, 0.1);
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--lightest-slate); /* Text color changes to white/lightest-slate on hover/active */
         }
 
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
+            width: 25px; /* Active length */
+            background-color: var(--green); /* Line indicator uses accent color */
+        }
+        
+        /* Social Links in Sidebar Footer */
+        .sidebar-footer {
+            padding-top: 5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
+            padding-top: 1rem;
+        }
+
+        .social-links a {
+            font-size: 1.25rem;
+            color: var(--slate);
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--green);
+            transform: translateY(-3px);
+        }
+        
+        /* --- Main Content Section Styling --- */
+        section {
+            padding: 2rem 0;
+            margin-bottom: 4rem; /* Spacing between sections */
+        }
+        
+        /* Section Header Title Style (H2) */
+        .section-header {
+            color: var(--lightest-slate);
+            margin-bottom: 2rem;
+            font-size: 1.7rem; /* Larger font size for main headers */
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            /* Removed sticky positioning */
+        }
+        
+        .section-header .number {
+            color: var(--green);
+            font-size: 1rem;
+            font-weight: 400;
+            margin-right: 0.5rem;
+        }
 
         /* About Section */
-        #about {
-            min-height: 100vh;
-            padding: 5rem 10%;
-            display: flex;
-            align-items: center;
-            gap: 4rem;
+        #about p {
+            color: var(--slate);
+            margin-bottom: 1.25rem;
         }
 
-        .about-img {
-            width: 350px;
-            height: 350px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 3px solid;
+        #about a {
+            color: var(--green);
+            text-decoration: none;
         }
-
-        .about-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .about-content h2 {
-            font-size: 2.5rem;
-            color: #0d0b0b;
-            margin-bottom: 1rem;
-        }
-
-        .about-content h3 {
-            font-size: 1.8rem;
-            color: #545d8f;
-            margin-bottom: 1rem;
-        }
-
-        .about-content h4 {
-            font-size: 1.3rem;
-            color: #0d0b0b;
-            margin-bottom: 1rem;
-        }
-
-        .about-content p {
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            color: #555555;
-        }
-
-        .about-content .email {
-            color: #3e6ed6;
-            margin: 1rem 0;
-        }
-
-        /* Skills Section */
-        #skills {
-            min-height: 100vh;
-            padding: 5rem 10%;
-            background: #f8f9fa;
-        }
-
+        
+        /* Skills Section - Flat list style */
         #skills h2 {
-            font-size: 2.5rem;
-            color: #0d0b0b;
-            text-align: center;
-            margin-bottom: 3rem;
+            display: none; /* Replaced by .section-header */
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Use grid for columns */
+            gap: 0.5rem 0; /* Gap between rows/columns */
+            
         }
-
+        
         .skill-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #e0e0e0;
+            background: none; 
+            padding: 0;
+            border: none;
+            text-align: left;
         }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
-        }
-
-        .skill-icon {
-            font-size: 3rem;
-            color: #3b3028;
-            margin-bottom: 1rem;
-        }
-
+        
         .skill-card h3 {
-            color: #3b3028;
-            font-size: 1rem;
+            color: var(--slate);
+            font-size: 0.9rem;
+            font-weight: 400;
+            padding-left: 15px; /* Add padding to look like a bulleted list */
+            position: relative;
         }
 
-        /* Education Section */
-        #education {
-            min-height: 100vh;
-            padding: 5rem 10%;
-            background: #ffffff;
+        .skill-card h3::before {
+            content: '▹'; /* Use triangle bullet for list style */
+            position: absolute;
+            left: 0;
+            color: var(--green);
         }
-
-        #education h2 {
-            font-size: 2.5rem;
-            color: #0d0b0b;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        #education .subtitle {
-            text-align: center;
-            color: #545d8f;
-            margin-bottom: 3rem;
-        }
-
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        
+        /* Education Section - Minimal card style */
         .education-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid #e0e0e0;
-            transition: transform 0.3s;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            background: none; /* Removed background */
+            padding: 0;
+            border: none;
+            box-shadow: none;
+            transition: none;
+            margin-bottom: 2rem;
+            cursor: default;
         }
-
+        
         .education-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+             background: none;
+             transform: translateY(0);
         }
-
-        .education-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-
+        
         .education-card h3 {
-            color: ##0d0b0b;
+            color: var(--lightest-slate);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .education-card h4 {
+            color: var(--green);
+            font-size: 0.85rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+        
+        .education-card p {
+            color: var(--slate);
+            font-size: 0.9rem;
+        }
+
+        /* Projects Section - Text-only hoverable cards */
+        .project-card {
+            background: none; 
+            border: none;
+            box-shadow: none;
+            border-radius: 4px;
+            padding: 2rem 1.75rem; /* Padding for hover effect */
+            transition: background 0.3s;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card:hover {
+            background: var(--navy); /* Subtle highlight on hover */
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        .project-card img,
+        .project-card .project-links {
+            display: none; /* Remove images and links row to match reference style */
+        }
+        
+        .project-info {
+            width: 100%;
+            padding: 0;
+        }
+        
+        .project-info h3 {
+            color: var(--lightest-slate);
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
 
-        .education-card h4 {
-            color: #545d8f;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .education-card p {
-            color: #555555;
-        }
-
-        /* Projects Section */
-        #work {
-            min-height: 100vh;
-            padding: 5rem 10%;
-            background: #f8f9fa;
-        }
-
-        #work h2 {
-            font-size: 2.5rem;
-            color: #0d0b0b;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #e0e0e0;
-            transition: transform 0.3s;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .project-info {
-            padding: 2rem;
-        }
-
-        .project-info h3 {
-            color: #3b3028;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
         .project-info p {
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            color: #555555;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-links a {
-            padding: 0.5rem 1.5rem;
-            background: transparent;
-            border: 2px solid #3b3028;
-            color: #3b3028;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        .project-links a:hover {
-            background: rgba(100, 255, 218, 0.1);
+            color: var(--slate);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         /* Contact Section */
         #contact {
-            min-height: 100vh;
-            padding: 5rem 10%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4rem;
-            background: #ffffff;
+            padding: 2rem 0;
+            text-align: center;
         }
-
-        .contact-img {
-            width: 500px;
-        }
-
-        .contact-img img {
-            width: 100%;
-            height: auto;
-        }
-
+        
         .contact-form {
-            flex: 1;
-            max-width: 600px;
+            max-width: 500px;
+            margin: 2rem auto;
+            text-align: left;
         }
 
         .contact-form h2 {
-            font-size: 2.5rem;
-            color: #0d0b0b;
-            margin-bottom: 2rem;
+            font-size: 2rem;
         }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
+        
         .form-group input,
         .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: #f8f9fa;
-            border: 1px solid #e0e0e0;
-            color: #0d0b0b;
-            border-radius: 5px;
-            font-family: inherit;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
+            background: var(--navy);
+            border: 1px solid var(--light-navy);
+            color: var(--lightest-slate);
+            padding: 0.75rem;
+            border-radius: 4px;
         }
 
         .submit-btn {
-            padding: 1rem 2rem;
-            background: #545d8f;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
+            padding: 0.75rem 1.5rem;
+            background: var(--green);
+            color: var(--dark-navy);
+            border-radius: 4px;
         }
 
         .submit-btn:hover {
@@ -415,439 +342,269 @@
         }
 
         /* Footer */
-        footer {
-            background: #f8f9fa;
-            padding: 3rem 10%;
-            border-top: 1px solid #e0e0e0;
+        .page-footer {
+            background: none;
+            padding: 3rem 0;
         }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            color: #0d0b0b;
-            margin-bottom: 1rem;
-        }
-
-        .footer-section p {
-            line-height: 1.8;
-            color: #555555;
-        }
-
-        .footer-section a {
-            color: #555555;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: #545d8f;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #545d8f;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: #545d8f;
-            color: #ffffff;
-        }
-
+        
         .footer-bottom {
+            font-size: 0.8rem;
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #e0e0e0;
-            color: #555555;
+            color: var(--slate);
         }
-
-        .footer-bottom a {
-            color: #545d8f;
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            #home {
-                flex-direction: column-reverse;
-                padding-top: 8rem;
-            }
-
-            .hero-content h2 {
-                font-size: 2.5rem;
-            }
-
-            .hero-img {
-                width: 300px;
-                height: 300px;
-            }
-
-            #about {
+        
+        /* --- Responsive Design for Mobile/Small Screens --- */
+        @media (max-width: 1080px) {
+            .page-container {
                 flex-direction: column;
+                gap: 0;
             }
 
-            .about-img {
+            .left-sidebar {
+                position: relative; /* Make sidebar scrollable */
                 width: 100%;
-                max-width: 400px;
+                max-width: 100%;
+                height: auto;
+                padding-top: 3rem;
+                padding-bottom: 1rem;
             }
 
-            #contact {
-                flex-direction: column;
-            }
-
-            .contact-img {
+            .main-content {
                 width: 100%;
-                max-width: 400px;
+                padding: 1rem 0 3rem 0;
+            }
+            
+            .sidebar-footer {
+                display: none; /* Hide social links footer on small screens, keep them in the main content area */
             }
 
             .nav-links {
-                display: none;
+                display: none; /* Hide vertical nav links on mobile */
             }
-
-            .projects-grid,
-            .education-grid {
-                grid-template-columns: 1fr;
-            }
+        }
+        
+        /* Add basic scroll-reveal (for polish) */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="#Home" class="logo">Sumit Hajare</a>
-        <ul class="nav-links">
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#About">About</a></li>
-            <li><a href="#Skills">Skills</a></li>
-            <li><a href="#Education">Education</a></li>
-            <li><a href="#Work">Projects</a></li>
-            <li><a href="#Contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="page-container">
+        <div class="left-sidebar">
+            <header class="sidebar-header">
+                <h1>Sumit Hajare</h1>
+                <h2>Embedded Systems & IoT Developer</h2>
+                <p>I'm an IoT and Embedded Systems enthusiast with hands-on experience in developing automation solutions using ESP32, Arduino, and Raspberry Pi.</p>
+                
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#about" class="active">ABOUT</a></li>
+                        <li><a href="#skills">SKILLS</a></li>
+                        <li><a href="#education">EDUCATION</a></li>
+                        <li><a href="#work">PROJECTS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-    <!-- Hero Section -->
-    <section id="home">
-     <h1>Hi There, I'm Sumit Hajare</h1>
-        <div class="hero-content">
-            <h2>Sumit Hajare</h2>
-            <p class="typing">I Am Into <span id="typed"></span></p>
-            <a href="#about" class="cta-btn">About Me</a>
+            <footer class="sidebar-footer">
+                 <div class="social-links">
+                    <a href="https://linkedin.com/in/sumithajare3b562132b" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/sumithajare11" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:sumithajare2003@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+917057353171" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                </div>
+            </footer>
         </div>
-        <div class="hero-img">
-            <imgsrc="https://media.licdn.com/dms/image/v2/D4D22AQFjupgqPXdqQg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1692686262219?e=2147483647&v=beta&t=Eep7g_xoZT49NtdpI6eatJeBVadETR2Zd0zkBn6GWpM" alt="Sumit Hajare">
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
         
-        <div class="about-content">
-            <h2>About Me</h2>
-            <h3>I'm Sumit</h3>
-            <h4>Embedded Systems & IoT Developer</h4>
-            <p>I'm an IoT and Embedded Systems enthusiast with hands-on experience in developing automation solutions using ESP32, Arduino, and Raspberry Pi. I specialize in real-time monitoring systems, sensor interfacing, and cloud-based data logging.</p>
-            <p>With a strong foundation in Electronics & Telecommunication Engineering, I've worked on projects ranging from railway safety systems to smart home automation. I'm proficient in C, Python, and Embedded C, with expertise in MQTT, ThingSpeak, and various IoT platforms.</p>
-            <p>I'm constantly exploring new technologies in embedded systems, working with microcontroller architectures (AVR, ARM), and implementing efficient communication protocols (I2C, SPI, UART, PWM).</p>
-            <p class="Email">Email : sumithajare2003@gmail.com</p>
-            <a href="#" class="cta-btn">Resume</a>
-        </div>
-    </section>
+        <main class="main-content">
+            <section id="about" class="reveal-element">
+                <h2 class="section-header"><span class="number">01.</span> About Me</h2>
+                <div class="about-content">
+                    <p>Hello! I'm Sumit, and I'm deeply passionate about **Embedded Systems & IoT Development**. My journey began with a strong foundation in Electronics & Telecommunication Engineering from Shivaji University.</p>
+                    
+                    <p>I specialize in engineering real-time automation and monitoring solutions using ESP32, Arduino, and Raspberry Pi. My focus is on robust sensor interfacing, implementing efficient communication protocols like I2C, SPI, and UART, and designing systems that connect physical devices to the digital world.</p>
+                    
+                    <p>Over the years, I've delivered projects ranging from advanced railway safety systems to smart home automation, achieving tangible results like a 95% anomaly detection accuracy and reducing energy consumption by 30% through intelligent scheduling. I'm proficient in C, Python, and Embedded C, and I leverage cloud platforms like MQTT, ThingSpeak, and Blynk for seamless data logging and control.</p>
+                    
+                    <p>I am currently seeking opportunities where I can apply my expertise in microcontrollers (AVR, ARM) and my enthusiasm for new technologies to build impactful, scalable IoT solutions. Let's build something smart together!</p>
+                    
+                    <p>Contact me: <a href="mailto:sumithajare2003@gmail.com">sumithajare2003@gmail.com</a></p>
+                    <a href="#" class="cta-btn" style="display: none;">View Full Resume</a>
+                </div>
+            </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills & Abilities</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3>C</h3>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fab fa-python"></i>
-                </div>
-                <h3>Python</h3>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-microchip"></i>
-                </div>
-                <h3>Embedded C</h3>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-microchip"></i>
-                </div>
-                <h3>Arduino</h3>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-wifi"></i>
-                </div>
-                <h3>ESP32</h3>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fab fa-raspberry-pi"></i>
-                </div>
-                <h3>Raspberry Pi</h3>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-cloud"></i>
-                </div>
-                <h3>MQTT</h3>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-database"></i>
-                </div>
-                <h3>ThingSpeak</h3>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3>Blynk</h3>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fab fa-git-alt"></i>
-                </div>
-                <h3>Git</h3>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>MATLAB</h3>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <i class="fab fa-github"></i>
-                </div>
-                <h3>Github</h3>
-            </div>
-        </div>
-    </section>
+            <section id="skills" class="reveal-element">
+                <h2 class="section-header"><span class="number">02.</span> Skills & Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-card"><h3>C</h3></div>
+                    <div class="skill-card"><h3>Embedded C</h3></div>
+                    <div class="skill-card"><h3>Python</h3></div>
+                    <div class="skill-card"><h3>MATLAB</h3></div>
+                    
+                    <div class="skill-card"><h3>Arduino</h3></div>
+                    <div class="skill-card"><h3>ESP32</h3></div>
+                    <div class="skill-card"><h3>Raspberry Pi</h3></div>
+                    <div class="skill-card"><h3>AVR / ARM Architectures</h3></div>
 
-    <!-- Education Section -->
-    <section id="education">
-        <h2>My Education</h2>
-        <p class="subtitle">Education is not the learning of facts, but the training of the mind to think.</p>
-        <div class="education-grid">
-            <div class="education-card">
-                <img src="https://media.getmyuni.com/azure/college-images-test/shivaji-university-suk-kolhapur/3876586d0ba040b5a33bb7b65d86b9c4.jpeg" alt="Shivaji University">
-                <h3>Shivaji University, Kolhapur</h3>
-                <h4>Aug 2021 – May 2025 | B.Tech in Electronics & Telecommunication Engineering</h4>
-                <p>CGPA: 7.0</p>
-            </div>
-            <div class="education-card">                <img src="https://hscinspire.mahahsscboard.in/mahalogo.png" alt="School">
-                <h3>Maharashtra State Board</h3>
-                <h4>Jul 2019 – Feb 2021 | Completed Higher Secondary Certificate (HSC) in Science</h4>
-                <p>Percentage: 84%</p>
-            </div>
-        </div>
-    </section>
+                    <div class="skill-card"><h3>MQTT</h3></div>
+                    <div class="skill-card"><h3>ThingSpeak</h3></div>
+                    <div class="skill-card"><h3>Blynk</h3></div>
+                    <div class="skill-card"><h3>I2C, SPI, UART, PWM</h3></div>
+                    
+                    <div class="skill-card"><h3>Git</h3></div>
+                    <div class="skill-card"><h3>GitHub</h3></div>
+                </div>
+            </section>
 
-    <!-- Projects Section -->
-    <section id="work">
-        <h2>Projects Made</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&h=400&fit=crop" alt="Railway Accident Prevention System">
-                <div class="project-info">
-                    <h3>Railway Accident Prevention System</h3>
-                    <p>Engineered real-time railway safety system using multiple sensors and microcontrollers to detect track anomalies. Integrated GPS and GSM modules for instant location tracking and automated alert generation. Achieved 95% accuracy in anomaly detection.</p>
-                    <div class="project-links">
-                        <a href="#">Code</a>
-                        <a href="#">Visit</a>
+            <section id="education" class="reveal-element">
+                <h2 class="section-header"><span class="number">03.</span> Education</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <header>
+                            <h3>B.Tech in Electronics & Telecommunication Engineering</h3>
+                            <h4>Shivaji University, Kolhapur | Aug 2021 – May 2025 (Expected)</h4>
+                        </header>
+                        <ul>
+                            <li><p>Relevant Coursework: Microcontrollers, Digital Signal Processing, IoT Systems, Communication Networks.</p></li>
+                            <li><p>Academic Achievement: CGPA: 7.0</p></li>
+                        </ul>
+                    </div>
+                    <div class="education-card">
+                         <header>
+                            <h3>Higher Secondary Certificate (HSC) in Science</h3>
+                            <h4>Maharashtra State Board | Jul 2019 – Feb 2021</h4>
+                        </header>
+                         <ul>
+                            <li><p>Focus on Physics, Chemistry, and Mathematics.</p></li>
+                            <li><p>Academic Achievement: Percentage: 84%</p></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop" alt="Automated Home Monitoring System">
-                <div class="project-info">
-                    <h3>Automated Home Monitoring System</h3>
-                    <p>Developed smart home automation system with temperature, humidity, and motion sensors for remote monitoring. Created mobile application interface for real-time control. Reduced energy consumption by 30% through intelligent scheduling.</p>
-                    <div class="project-links">
-                        <a href="#">Code</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=400&fit=crop" alt="IoT Cloud Monitoring">
-                <div class="project-info">
-                    <h3>IoT Cloud Monitoring Dashboard</h3>
-                    <p>Implemented cloud-based data logging and visualization dashboard for predictive maintenance analytics. Integrated MQTT protocol for efficient data transmission and ThingSpeak for real-time monitoring.</p>
-                    <div class="project-links">
-                        <a href="#">Code</a>
-                        <a href="#">Visit</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="contact-img">
-            
-        </div>
-        <div class="contact-form">
-            <h2>Get in Touch</h2>
-            <form>
-                <div class="form-group">
-                    <input type="text" placeholder="Name" required>
+            <section id="work" class="reveal-element">
+                <h2 class="section-header"><span class="number">04.</span> Featured Projects</h2>
+                <div class="projects-grid">
+                    <a href="#" target="_blank" class="project-card">
+                        <div class="project-info">
+                            <h3>Railway Accident Prevention System</h3>
+                            <p>Engineered a real-time railway safety system using multiple sensors and microcontrollers. Integrated GPS and GSM modules for instant location tracking and automated alert generation, achieving **95% accuracy** in anomaly detection. <span style="color: var(--green); font-size: 0.9rem;">(Microcontrollers, GPS/GSM, Embedded C)</span></p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" target="_blank" class="project-card">
+                        <div class="project-info">
+                            <h3>Automated Home Monitoring System</h3>
+                            <p>Developed a smart home automation system with temperature, humidity, and motion sensors for remote monitoring via the cloud. Created a mobile application interface for real-time control, resulting in a **30% reduction** in energy consumption. <span style="color: var(--green); font-size: 0.9rem;">(ESP32, MQTT, Blynk, Sensor Interfacing)</span></p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" target="_blank" class="project-card">
+                        <div class="project-info">
+                            <h3>Industrial IoT Cloud Monitoring</h3>
+                            <p>Implemented a cloud-based data logging and visualization dashboard for predictive maintenance analytics. Leveraged the **MQTT protocol** for efficient data transmission and **ThingSpeak** for real-time data visualization. <span style="color: var(--green); font-size: 0.9rem;">(Python, MQTT, ThingSpeak, Data Analytics)</span></p>
+                        </div>
+                    </a>
                 </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Phone">
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
-        </div>
-    </section>
+            </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Sumit's Portfolio</h3>
-                <p>Thank you for visiting my personal portfolio website. Connect with me over socials.</p>
-                <p>Keep Rising 🚀. Connect with me over live chat!</p>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/sumithajare3b562132b" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/sumithajare11" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:sumithajare2003@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:+917057353171"><i class="fas fa-phone"></i></a>
+            <section id="contact" class="reveal-element">
+                <h2 class="section-header"><span class="number">05.</span> Get In Touch</h2>
+                <div class="contact-form">
+                    <p style="text-align: center; max-width: 450px; margin: 0 auto 2rem;">I'm currently looking for new opportunities in the IoT and Embedded Systems space. Whether you have a project idea, a job offer, or just want to connect, feel free to reach out! My inbox is always open.</p>
+
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone (Optional)">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Say Hello!</button>
+                    </form>
                 </div>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="#Home">Home</a>
-                <a href="#About">About</a>
-                <a href="#Skills">Skills</a>
-                <a href="#Education">Education</a>
-                <a href="#Work">Work</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <p><i class="fas fa-phone"></i> +91-7057353171</p>
-                <p><i class="fas fa-envelope"></i> sumithajare2003@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Kolhapur, Maharashtra, India</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Designed with ❤️ by <a href="https://linkedin.com/in/sumithajare3b562132b">Sumit Hajare</a></p>
-        </div>
-    </footer>
+            </section>
+
+            <footer class="page-footer">
+                 <div class="footer-bottom">
+                    <p>Designed with ❤️ by <a href="https://linkedin.com/in/sumithajare3b562132b">Sumit Hajare</a></p>
+                    <p style="font-size: 0.75rem; margin-top: 0.5rem;">Inspired by the popular B4B/Brittany Chiang portfolio design.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
 
     <script>
-        // Typing Animation
-        const words = ['IoT', 'Embedded Systems', 'Automation', 'Real-Time Monitoring'];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingSpeed = 150;
-        const deletingSpeed = 100;
-        const delayBetweenWords = 2000;
+        // --- Navigation Activation & Scroll Logic ---
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('.main-content section');
 
-        function type() {
-            const currentWord = words[wordIndex];
-            const typedElement = document.getElementById('typed');
+        // Function to update the active link
+        function updateActiveLink(entries) {
+            entries.forEach(entry => {
+                const id = entry.target.id;
+                const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
 
-            if (isDeleting) {
-                typedElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typedElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                setTimeout(() => {
-                    isDeleting = true;
-                }, delayBetweenWords);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-            }
-
-            const speed = isDeleting ? deletingSpeed : typingSpeed;
-            setTimeout(type, speed);
-        }
-
-        // Start typing animation
-        type();
-
-        // Smooth scroll with offset for fixed nav
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                // Check if the section is intersecting and is NOT the first (home/about) section when scrolling up
+                // Use a larger rootMargin to highlight the section before it hits the exact center/top
+                if (entry.isIntersecting && activeLink) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    activeLink.classList.add('active');
                 }
             });
+        }
+        
+        // Initialize IntersectionObserver for active link highlighting
+        const navObserverOptions = {
+            root: null, // Use viewport
+            threshold: 0.2, // Trigger when 20% of the section is visible
+            rootMargin: '0px 0px -50% 0px' // Change activation point to near the middle of the viewport
+        };
+        
+        const navObserver = new IntersectionObserver(updateActiveLink, navObserverOptions);
+        sections.forEach(section => {
+            navObserver.observe(section);
         });
 
-        // Form submission
+        // --- Scroll Reveal Animation ---
+        const revealObserverOptions = {
+            root: null, // Use viewport
+            threshold: 0.1,
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing after reveal
+                }
+            });
+        }, revealObserverOptions);
+
+        document.querySelectorAll('.reveal-element').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // --- Form submission (Retained) ---
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! I will get back to you soon.');
             this.reset();
-        });
-
-        // Scroll reveal animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.skill-card, .education-card, .project-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
         });
     </script>
 </body>
