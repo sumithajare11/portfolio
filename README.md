@@ -6,20 +6,19 @@
     <title>Portfolio | Sumit Hajare</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- General Reset & Variables --- */
+        /* --- General Reset & Variables (Light Theme) --- */
         :root {
-            --dark-navy: #0a192f;      /* Main Background Color (Dark/Black) */
-            --navy: #112240;           /* Secondary Background/Card Color */
-            --lightest-slate: #ccd6f6; /* Main Body Text Color (Light) */
-            --slate: #8892b0;          /* Secondary Text Color */
-            --green: #64ffda;          /* Accent Color (Keep your bright teal) */
+            --light-white: #ffffff;    /* Main Background Color (White) */
+            --light-gray: #f0f0f0;     /* Secondary Background/Card Color (Very Light Gray) */
+            --dark-navy: #172a45;      /* Primary Text Color (Dark) */
+            --slate: #5e6f88;          /* Secondary Text Color (Medium Gray) */
+            --green: #007bff;          /* Accent Color (Changed to a blue for better contrast on white) */
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* Using a common modern system font stack */
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
@@ -28,13 +27,13 @@
         }
 
         body {
-            background: var(--dark-navy);
-            color: var(--slate);
+            background: var(--light-white); /* White Background */
+            color: var(--dark-navy);
             line-height: 1.6;
             min-height: 100vh;
             display: block; 
             overflow-x: hidden;
-            padding: 0 5%; /* Add overall horizontal padding */
+            padding: 0 5%;
         }
 
         /* --- New Layout Structure (Desktop: Two Columns) --- */
@@ -67,21 +66,20 @@
 
         /* --- Left Sidebar Content Styling --- */
         .sidebar-header {
-            /* Adjusted for a compact, vertical look */
             padding: 0;
         }
 
         .sidebar-header h1 {
             font-size: 4rem;
             font-weight: 700;
-            color: var(--lightest-slate);
+            color: var(--dark-navy); /* Dark text on white */
             margin-bottom: 0.5rem;
         }
 
         .sidebar-header h2 {
             font-size: 1.5rem;
             font-weight: 500;
-            color: var(--lightest-slate);
+            color: var(--dark-navy);
             margin-bottom: 1rem;
         }
 
@@ -98,11 +96,11 @@
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            margin-bottom: auto; /* Push social links to the bottom */
+            margin-bottom: auto;
         }
 
         .nav-links li {
-            width: fit-content; /* Ensure the line indicator only stretches to the text length */
+            width: fit-content;
         }
 
         .nav-links a {
@@ -110,12 +108,12 @@
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 600;
-            letter-spacing: 0.1em; /* Increased letter spacing */
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             transition: color 0.3s;
             display: inline-block;
             position: relative;
-            padding-left: 25px; /* Space for the line indicator */
+            padding-left: 25px;
         }
 
         .nav-links a::before {
@@ -124,7 +122,7 @@
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 15px; /* Default length */
+            width: 15px;
             height: 1px;
             background-color: var(--slate);
             transition: all 0.3s;
@@ -132,12 +130,12 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--lightest-slate); /* Text color changes to white/lightest-slate on hover/active */
+            color: var(--dark-navy); /* Text color changes to dark on hover/active */
         }
 
         .nav-links a:hover::before,
         .nav-links a.active::before {
-            width: 25px; /* Active length */
+            width: 25px;
             background-color: var(--green); /* Line indicator uses accent color */
         }
         
@@ -166,17 +164,16 @@
         /* --- Main Content Section Styling --- */
         section {
             padding: 2rem 0;
-            margin-bottom: 4rem; /* Spacing between sections */
+            margin-bottom: 4rem;
         }
         
         /* Section Header Title Style (H2) */
         .section-header {
-            color: var(--lightest-slate);
+            color: var(--dark-navy);
             margin-bottom: 2rem;
-            font-size: 1.7rem; /* Larger font size for main headers */
+            font-size: 1.7rem;
             font-weight: 700;
             letter-spacing: -0.01em;
-            /* Removed sticky positioning */
         }
         
         .section-header .number {
@@ -198,15 +195,10 @@
         }
         
         /* Skills Section - Flat list style */
-        #skills h2 {
-            display: none; /* Replaced by .section-header */
-        }
-
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Use grid for columns */
-            gap: 0.5rem 0; /* Gap between rows/columns */
-            
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 0.5rem 0;
         }
         
         .skill-card {
@@ -220,12 +212,12 @@
             color: var(--slate);
             font-size: 0.9rem;
             font-weight: 400;
-            padding-left: 15px; /* Add padding to look like a bulleted list */
+            padding-left: 15px;
             position: relative;
         }
 
         .skill-card h3::before {
-            content: '▹'; /* Use triangle bullet for list style */
+            content: '▹';
             position: absolute;
             left: 0;
             color: var(--green);
@@ -233,7 +225,7 @@
         
         /* Education Section - Minimal card style */
         .education-card {
-            background: none; /* Removed background */
+            background: none;
             padding: 0;
             border: none;
             box-shadow: none;
@@ -242,13 +234,8 @@
             cursor: default;
         }
         
-        .education-card:hover {
-             background: none;
-             transform: translateY(0);
-        }
-        
         .education-card h3 {
-            color: var(--lightest-slate);
+            color: var(--dark-navy);
             font-size: 1.1rem;
             margin-bottom: 0.25rem;
         }
@@ -271,21 +258,16 @@
             border: none;
             box-shadow: none;
             border-radius: 4px;
-            padding: 2rem 1.75rem; /* Padding for hover effect */
+            padding: 2rem 1.75rem;
             transition: background 0.3s;
             overflow: hidden;
             margin-bottom: 1.5rem;
         }
 
         .project-card:hover {
-            background: var(--navy); /* Subtle highlight on hover */
+            background: var(--light-gray); /* Subtle light gray highlight on hover */
             transform: translateY(0);
             box-shadow: none;
-        }
-
-        .project-card img,
-        .project-card .project-links {
-            display: none; /* Remove images and links row to match reference style */
         }
         
         .project-info {
@@ -294,7 +276,7 @@
         }
         
         .project-info h3 {
-            color: var(--lightest-slate);
+            color: var(--dark-navy);
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
@@ -316,16 +298,12 @@
             margin: 2rem auto;
             text-align: left;
         }
-
-        .contact-form h2 {
-            font-size: 2rem;
-        }
         
         .form-group input,
         .form-group textarea {
-            background: var(--navy);
-            border: 1px solid var(--light-navy);
-            color: var(--lightest-slate);
+            background: var(--light-gray); /* Light gray background for input fields */
+            border: 1px solid #ccc;
+            color: var(--dark-navy);
             padding: 0.75rem;
             border-radius: 4px;
         }
@@ -333,12 +311,12 @@
         .submit-btn {
             padding: 0.75rem 1.5rem;
             background: var(--green);
-            color: var(--dark-navy);
+            color: var(--light-white); /* White text on blue button */
             border-radius: 4px;
         }
 
         .submit-btn:hover {
-            background: #52d4b8;
+            background: #0056b3;
         }
 
         /* Footer */
@@ -361,7 +339,7 @@
             }
 
             .left-sidebar {
-                position: relative; /* Make sidebar scrollable */
+                position: relative;
                 width: 100%;
                 max-width: 100%;
                 height: auto;
@@ -375,15 +353,15 @@
             }
             
             .sidebar-footer {
-                display: none; /* Hide social links footer on small screens, keep them in the main content area */
+                display: none;
             }
 
             .nav-links {
-                display: none; /* Hide vertical nav links on mobile */
+                display: none;
             }
         }
         
-        /* Add basic scroll-reveal (for polish) */
+        /* Add basic scroll-reveal */
         .reveal-element {
             opacity: 0;
             transform: translateY(10px);
@@ -560,8 +538,6 @@
                 const id = entry.target.id;
                 const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
 
-                // Check if the section is intersecting and is NOT the first (home/about) section when scrolling up
-                // Use a larger rootMargin to highlight the section before it hits the exact center/top
                 if (entry.isIntersecting && activeLink) {
                     navLinks.forEach(link => link.classList.remove('active'));
                     activeLink.classList.add('active');
@@ -571,9 +547,9 @@
         
         // Initialize IntersectionObserver for active link highlighting
         const navObserverOptions = {
-            root: null, // Use viewport
-            threshold: 0.2, // Trigger when 20% of the section is visible
-            rootMargin: '0px 0px -50% 0px' // Change activation point to near the middle of the viewport
+            root: null,
+            threshold: 0.2,
+            rootMargin: '0px 0px -50% 0px'
         };
         
         const navObserver = new IntersectionObserver(updateActiveLink, navObserverOptions);
@@ -583,7 +559,7 @@
 
         // --- Scroll Reveal Animation ---
         const revealObserverOptions = {
-            root: null, // Use viewport
+            root: null,
             threshold: 0.1,
         };
 
@@ -591,7 +567,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Stop observing after reveal
+                    observer.unobserve(entry.target);
                 }
             });
         }, revealObserverOptions);
