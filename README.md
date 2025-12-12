@@ -583,7 +583,7 @@
             <p>I'm an IoT and Embedded Systems enthusiast with hands-on experience in developing automation solutions using ESP32, Arduino, and Raspberry Pi. I specialize in real-time monitoring systems, sensor interfacing, and cloud-based data logging.</p>
             <p>With a strong foundation in Electronics & Telecommunication Engineering, I've worked on projects ranging from railway safety systems to smart home automation. I'm proficient in C, Python, and Embedded C, with expertise in MQTT, ThingSpeak, and various IoT platforms.</p>
             <p>I'm constantly exploring new technologies in embedded systems, working with microcontroller architectures (AVR, ARM), and implementing efficient communication protocols (I2C, SPI, UART, PWM).</p>
-            <p class="email">email : sumithajare2003@gmail.com</p>
+            <p class="Email">Email : sumithajare2003@gmail.com</p>
             <a href="#" class="cta-btn">Resume</a>
         </div>
     </section>
