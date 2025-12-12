@@ -561,9 +561,8 @@
     <!-- Hero Section -->
     <section id="home">
      <h1>Hi There, I'm Sumit Hajare</h1>
-    <section id="home">
         <div class="hero-content">
-            <h1>Sumit Hajare</h2>
+            <h2>Sumit Hajare</h2>
             <p class="typing">I Am Into <span id="typed"></span></p>
             <a href="#about" class="cta-btn">About Me</a>
         </div>
