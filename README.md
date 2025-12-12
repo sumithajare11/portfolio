@@ -556,14 +556,15 @@
             <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
-<h1>Hi There, I'm Sumit Hajare</h1>
     <!-- Hero Section -->
+<h1>Hi There, I'm Sumit Hajare</h1>
+    
     <section id="home">
-        <div class="hero-content"> 
+    </section>div class="hero-content"> 
             <h2>Sumit Hajare</h2>
             <p class="typing">I Am Into <span id="typed"></span></p>
             <a href="#about" class="cta-btn">About Me</a>
-        </div>
+        
         <div class="hero-img">          <imgsrc="https://d25thuhsbcr6yb.cloudfront.net/m/s/32433/32423596/a-0005.jpg" alt="Sumit Hajare">
     </section>
 
