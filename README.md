@@ -12,7 +12,7 @@
             --light-gray: #f0f0f0;     /* Secondary Background/Card Color (Very Light Gray) */
             --dark-navy: #172a45;      /* Primary Text Color (Dark) */
             --slate: #5e6f88;          /* Secondary Text Color (Medium Gray) */
-            --green: #007bff;          /* Accent Color (Changed to a blue for better contrast on white) */
+            --green: #007bff;          /* Accent Color (Blue) */
         }
 
         * {
@@ -27,7 +27,7 @@
         }
 
         body {
-            background: var(--light-white); /* White Background */
+            background: var(--light-white);
             color: var(--dark-navy);
             line-height: 1.6;
             min-height: 100vh;
@@ -45,7 +45,6 @@
         }
 
         .left-sidebar {
-            /* Fixed sidebar for desktop */
             position: sticky; 
             top: 0;
             width: 40%;
@@ -59,20 +58,15 @@
         }
 
         .main-content {
-            /* Scrollable content on the right */
             width: 60%;
             padding: 5rem 0 3rem 0;
         }
 
         /* --- Left Sidebar Content Styling --- */
-        .sidebar-header {
-            padding: 0;
-        }
-
         .sidebar-header h1 {
             font-size: 4rem;
             font-weight: 700;
-            color: var(--dark-navy); /* Dark text on white */
+            color: var(--dark-navy);
             margin-bottom: 0.5rem;
         }
 
@@ -97,10 +91,6 @@
             flex-direction: column;
             gap: 1.5rem;
             margin-bottom: auto;
-        }
-
-        .nav-links li {
-            width: fit-content;
         }
 
         .nav-links a {
@@ -130,13 +120,13 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--dark-navy); /* Text color changes to dark on hover/active */
+            color: var(--dark-navy);
         }
 
         .nav-links a:hover::before,
         .nav-links a.active::before {
             width: 25px;
-            background-color: var(--green); /* Line indicator uses accent color */
+            background-color: var(--green);
         }
         
         /* Social Links in Sidebar Footer */
@@ -167,7 +157,6 @@
             margin-bottom: 4rem;
         }
         
-        /* Section Header Title Style (H2) */
         .section-header {
             color: var(--dark-navy);
             margin-bottom: 2rem;
@@ -183,12 +172,6 @@
             margin-right: 0.5rem;
         }
 
-        /* About Section */
-        #about p {
-            color: var(--slate);
-            margin-bottom: 1.25rem;
-        }
-
         #about a {
             color: var(--green);
             text-decoration: none;
@@ -199,13 +182,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 0.5rem 0;
-        }
-        
-        .skill-card {
-            background: none; 
-            padding: 0;
-            border: none;
-            text-align: left;
         }
         
         .skill-card h3 {
@@ -223,55 +199,56 @@
             color: var(--green);
         }
         
-        /* Education Section - Minimal card style */
-        .education-card {
-            background: none;
-            padding: 0;
-            border: none;
-            box-shadow: none;
-            transition: none;
-            margin-bottom: 2rem;
-            cursor: default;
-        }
-        
+        /* Education Section */
         .education-card h3 {
             color: var(--dark-navy);
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
         }
         
         .education-card h4 {
             color: var(--green);
-            font-size: 0.85rem;
-            font-weight: 400;
-            margin-bottom: 0.75rem;
         }
         
-        .education-card p {
-            color: var(--slate);
-            font-size: 0.9rem;
+        /* Projects Section - Side-by-Side Image and Info */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
-
-        /* Projects Section - Text-only hoverable cards */
+        
         .project-card {
-            background: none; 
-            border: none;
-            box-shadow: none;
-            border-radius: 4px;
-            padding: 2rem 1.75rem;
-            transition: background 0.3s;
+            display: flex; /* Enable flexbox for side-by-side layout */
+            background: var(--light-white);
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
             overflow: hidden;
-            margin-bottom: 1.5rem;
+            padding: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none; /* Important for <a> tags */
         }
 
         .project-card:hover {
-            background: var(--light-gray); /* Subtle light gray highlight on hover */
-            transform: translateY(0);
-            box-shadow: none;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            width: 40%; /* Image takes 40% of the card width */
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         
         .project-info {
-            width: 100%;
+            width: 60%; /* Info takes 60% of the card width */
             padding: 0;
         }
         
@@ -287,52 +264,44 @@
             margin-bottom: 0.75rem;
         }
 
-        /* Contact Section */
-        #contact {
-            padding: 2rem 0;
-            text-align: center;
+        .project-links a {
+            color: var(--dark-navy);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            transition: color 0.3s;
         }
         
-        .contact-form {
-            max-width: 500px;
-            margin: 2rem auto;
-            text-align: left;
+        .project-links a:hover {
+            color: var(--green);
         }
-        
-        .form-group input,
-        .form-group textarea {
-            background: var(--light-gray); /* Light gray background for input fields */
+
+        /* Contact Section and Footer remain mostly the same colors for light theme */
+        .contact-form input,
+        .contact-form textarea {
+            background: var(--light-gray);
             border: 1px solid #ccc;
             color: var(--dark-navy);
-            padding: 0.75rem;
-            border-radius: 4px;
-        }
-
-        .submit-btn {
-            padding: 0.75rem 1.5rem;
-            background: var(--green);
-            color: var(--light-white); /* White text on blue button */
-            border-radius: 4px;
-        }
-
-        .submit-btn:hover {
-            background: #0056b3;
-        }
-
-        /* Footer */
-        .page-footer {
-            background: none;
-            padding: 3rem 0;
         }
         
-        .footer-bottom {
-            font-size: 0.8rem;
-            text-align: center;
-            color: var(--slate);
+        /* --- Responsive Adjustments for Projects --- */
+        @media (max-width: 768px) {
+             .project-card {
+                flex-direction: column; /* Stack image and info vertically on mobile */
+                padding: 1.5rem;
+            }
+            .project-image {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 1rem;
+                height: 200px; /* fixed height for better look on small screens */
+            }
+            .project-info {
+                width: 100%;
+            }
         }
         
-        /* --- Responsive Design for Mobile/Small Screens --- */
         @media (max-width: 1080px) {
+            /* Mobile Layout Overrides (Stacking columns) */
             .page-container {
                 flex-direction: column;
                 gap: 0;
@@ -361,7 +330,7 @@
             }
         }
         
-        /* Add basic scroll-reveal */
+        /* Scroll Reveal Animation */
         .reveal-element {
             opacity: 0;
             transform: translateY(10px);
@@ -416,7 +385,6 @@
                     <p>I am currently seeking opportunities where I can apply my expertise in microcontrollers (AVR, ARM) and my enthusiasm for new technologies to build impactful, scalable IoT solutions. Let's build something smart together!</p>
                     
                     <p>Contact me: <a href="mailto:sumithajare2003@gmail.com">sumithajare2003@gmail.com</a></p>
-                    <a href="#" class="cta-btn" style="display: none;">View Full Resume</a>
                 </div>
             </section>
 
@@ -473,23 +441,47 @@
                 <h2 class="section-header"><span class="number">04.</span> Featured Projects</h2>
                 <div class="projects-grid">
                     <a href="#" target="_blank" class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300?text=Railway+Safety+System+Image" alt="Railway Accident Prevention System Screenshot">
+                        </div>
                         <div class="project-info">
                             <h3>Railway Accident Prevention System</h3>
-                            <p>Engineered a real-time railway safety system using multiple sensors and microcontrollers. Integrated GPS and GSM modules for instant location tracking and automated alert generation, achieving **95% accuracy** in anomaly detection. <span style="color: var(--green); font-size: 0.9rem;">(Microcontrollers, GPS/GSM, Embedded C)</span></p>
+                            <p>Engineered a real-time railway safety system using multiple sensors and microcontrollers. Integrated GPS and GSM modules for instant location tracking and automated alert generation, achieving **95% accuracy** in anomaly detection.</p>
+                            <p style="color: var(--green); font-size: 0.9rem; margin-top: 0.5rem;">Microcontrollers, GPS/GSM, Embedded C</p>
+                            <div class="project-links">
+                                <a href="#" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="External Link (Demo)"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
                         </div>
                     </a>
                     
                     <a href="#" target="_blank" class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300?text=Home+Automation+Image" alt="Automated Home Monitoring System Screenshot">
+                        </div>
                         <div class="project-info">
                             <h3>Automated Home Monitoring System</h3>
-                            <p>Developed a smart home automation system with temperature, humidity, and motion sensors for remote monitoring via the cloud. Created a mobile application interface for real-time control, resulting in a **30% reduction** in energy consumption. <span style="color: var(--green); font-size: 0.9rem;">(ESP32, MQTT, Blynk, Sensor Interfacing)</span></p>
+                            <p>Developed a smart home automation system with temperature, humidity, and motion sensors for remote monitoring via the cloud. Created a mobile application interface for real-time control, resulting in a **30% reduction** in energy consumption.</p>
+                            <p style="color: var(--green); font-size: 0.9rem; margin-top: 0.5rem;">ESP32, MQTT, Blynk, Sensor Interfacing</p>
+                            <div class="project-links">
+                                <a href="#" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="External Link (Demo)"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
                         </div>
                     </a>
                     
                     <a href="#" target="_blank" class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300?text=Industrial+IoT+Dashboard+Image" alt="Industrial IoT Cloud Monitoring Screenshot">
+                        </div>
                         <div class="project-info">
                             <h3>Industrial IoT Cloud Monitoring</h3>
-                            <p>Implemented a cloud-based data logging and visualization dashboard for predictive maintenance analytics. Leveraged the **MQTT protocol** for efficient data transmission and **ThingSpeak** for real-time data visualization. <span style="color: var(--green); font-size: 0.9rem;">(Python, MQTT, ThingSpeak, Data Analytics)</span></p>
+                            <p>Implemented a cloud-based data logging and visualization dashboard for predictive maintenance analytics. Leveraged the **MQTT protocol** for efficient data transmission and **ThingSpeak** for real-time data visualization.</p>
+                            <p style="color: var(--green); font-size: 0.9rem; margin-top: 0.5rem;">Python, MQTT, ThingSpeak, Data Analytics</p>
+                            <div class="project-links">
+                                <a href="#" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="External Link (Demo)"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
                         </div>
                     </a>
                 </div>
