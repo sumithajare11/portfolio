@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -51,7 +52,7 @@
         }
 
         .nav-links a {
-            color: #0d0b0b;
+            color: ##0d0b0b;
             text-decoration: none;
             font-size: 0.95rem;
             transition: color 0.3s;
@@ -79,7 +80,7 @@
 
         .hero-content h2 {
             font-size: 4rem;
-            color: #0d0b0b;
+            color: ##0d0b0b;
             margin-bottom: 1rem;
         }
 
@@ -93,8 +94,8 @@
             display: inline-block;
             padding: 1rem 2rem;
             background: transparent;
-            border: 2px solid #545d8f;
-            color: #545d8f;
+            border: 2px solid #64ffda;
+            color: #545d8;
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s;
@@ -109,7 +110,7 @@
             height: 500px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid #545d8f;
+            border: 5px solid #64ffda;
         }
 
         .hero-img img {
@@ -132,7 +133,7 @@
             height: 400px;
             border-radius: 10px;
             overflow: hidden;
-            border: 3px solid #545d8f;
+            border: 3px solid #64ffda;
         }
 
         .about-img img {
@@ -268,7 +269,7 @@
         }
 
         .education-card h3 {
-            color: #0d0b0b;
+            color: ##0d0b0b;
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
@@ -349,8 +350,8 @@
         .project-links a {
             padding: 0.5rem 1.5rem;
             background: transparent;
-            border: 2px solid #64ffda;
-            color: #545d8f;
+            border: 2px solid #545d8f;
+            color: #64ffda;
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s;
@@ -550,34 +551,37 @@
         <ul class="nav-links">
             <li><a href="#Home">Home</a></li>
             <li><a href="#About">About</a></li>
-            <li><a href="#Kkills">Skills</a></li>
+            <li><a href="#Skills">Skills</a></li>
             <li><a href="#Education">Education</a></li>
             <li><a href="#Work">Projects</a></li>
             <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
+
     <!-- Hero Section -->
-<h1>Hi There, I'm Sumit Hajare</h1>
-    
     <section id="home">
-    </section>div class="hero-content"> 
-            <h2>Sumit Hajare</h2>
+     <h1>Hi There, I'm Sumit Hajare</h1>
+    <section id="home">
+        <div class="hero-content">
+            <h1>Sumit Hajare</h2>
             <p class="typing">I Am Into <span id="typed"></span></p>
             <a href="#about" class="cta-btn">About Me</a>
-        
-        <div class="hero-img">          <imgsrc="https://d25thuhsbcr6yb.cloudfront.net/m/s/32433/32423596/a-0005.jpg" alt="Sumit Hajare">
+        </div>
+        <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" alt="Sumit Hajare">
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Sumit Hajare">
+        </div>
         <div class="about-content">
             <h2>About Me</h2>
-            <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Sumit Hajare">
-            
             <h3>I'm Sumit</h3>
             <h4>Embedded Systems & IoT Developer</h4>
-            <p>I'm an IoT and Embedded Systems enthusiast with hands-on experience in developing automation solutions using ESP32, ESP8266, Arduino, and Raspberry Pi. I specialize in real-time monitoring systems, sensor interfacing, and cloud-based data logging.</p>
+            <p>I'm an IoT and Embedded Systems enthusiast with hands-on experience in developing automation solutions using ESP32, Arduino, and Raspberry Pi. I specialize in real-time monitoring systems, sensor interfacing, and cloud-based data logging.</p>
             <p>With a strong foundation in Electronics & Telecommunication Engineering, I've worked on projects ranging from railway safety systems to smart home automation. I'm proficient in C, Python, and Embedded C, with expertise in MQTT, ThingSpeak, and various IoT platforms.</p>
             <p>I'm constantly exploring new technologies in embedded systems, working with microcontroller architectures (AVR, ARM), and implementing efficient communication protocols (I2C, SPI, UART, PWM).</p>
             <p class="email">email : sumithajare2003@gmail.com</p>
@@ -670,13 +674,12 @@
         <p class="subtitle">Education is not the learning of facts, but the training of the mind to think.</p>
         <div class="education-grid">
             <div class="education-card">
-                <img src="[https://arc-instruments.co.uk/case-studies/shivaji-university/](https://www.kolhapurtourism.org/wp-content/uploads/2021/09/Shivaji-University-Kolhapur-Maharashtra-3-scaled.jpg)/" alt="Shivaji University">
+                <img src="https://media.getmyuni.com/azure/college-images-test/shivaji-university-suk-kolhapur/3876586d0ba040b5a33bb7b65d86b9c4.jpeg&fit=crop" alt="Shivaji University">
                 <h3>Shivaji University, Kolhapur</h3>
                 <h4>Aug 2021 – May 2025 | Pursuing B.Tech in Electronics & Telecommunication Engineering</h4>
                 <p>CGPA: 7.0</p>
             </div>
-            <div class="education-card">
-                <img src="https://hscinspire.mahahsscboard.in/mahalogo.png/" alt="School">
+            <div class="education-card">                <imgsrc="https://hscinspire.mahahsscboard.in/mahalogo.png&fit=crop" alt="School">
                 <h3>Maharashtra State Board</h3>
                 <h4>Jul 2019 – Feb 2021 | Completed Higher Secondary Certificate (HSC) in Science</h4>
                 <p>Percentage: 84%</p>
@@ -763,15 +766,15 @@
                 </div>
             </div>
             <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="#Home">Home</a>
-                <a href="#About">About</a>
-                <a href="#Skills">Skills</a>
-                <a href="#Education">Education</a>
-                <a href="#Work">Work</a>
+                <h3>quick links</h3>
+                <a href="#home">home</a>
+                <a href="#about">about</a>
+                <a href="#skills">skills</a>
+                <a href="#education">education</a>
+                <a href="#work">work</a>
             </div>
             <div class="footer-section">
-                <h3>Contact Info</h3>
+                <h3>contact info</h3>
                 <p><i class="fas fa-phone"></i> +91-7057353171</p>
                 <p><i class="fas fa-envelope"></i> sumithajare2003@gmail.com</p>
                 <p><i class="fas fa-map-marker-alt"></i> Kolhapur, Maharashtra, India</p>
