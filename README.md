@@ -80,13 +80,13 @@
 
         .hero-content h2 {
             font-size: 4rem;
-            color: #ba7641;
+            color: #545d8f;
             margin-bottom: 1rem;
         }
 
         .hero-content .typing {
             font-size: 1.5rem;
-            color: #545d8f;
+            color: #ba7641;
             margin-bottom: 2rem;
         }
 
