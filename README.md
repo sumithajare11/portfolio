@@ -556,7 +556,6 @@
             <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
-</div>
 <h1>Hi There, I'm Sumit Hajare</h1>
     <!-- Hero Section -->
     <section id="home">
