@@ -574,7 +574,7 @@
     <!-- About Section -->
     <section id="about">
         <div class="about-img">
-            <img src=""D:\Images\photo.jpg"" alt="Sumit Hajare">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQHi-BeFYrpjdg/profile-displayphoto-scale_400_400/B56ZnDgrn1JwAg-/0/1759921754828?e=1767225600&v=beta&t=yBH2G9X_9LqwFAOPb9zeZ86XSEvhCgIfgNKG3kiMqn8" alt="Sumit Hajare">
         </div>
         <div class="about-content">
             <h2>About Me</h2>
