@@ -70,13 +70,23 @@ document.addEventListener('visibilitychange',
 
 
 // <!-- typed js effect starts -->
-var typed = new Typed(".typing-text", {
-    strings: ["Software Engineer","Iot & Embedded Systems Engineer","Full-Stack Developer","Embedded Developer"],
+document.addEventListener("DOMContentLoaded", function () {
+  new Typed(".typing-text", {
+    strings: [
+      "Software Engineer",
+      "IoT & Embedded Systems Engineer",
+      "Full-Stack Developer",
+      "Embedded Developer"
+    ],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
-    backDelay: 500,
+    backDelay: 1000,
+    smartBackspace: true
+  });
 });
+
+
 // <!-- typed js effect ends -->
 
 async function fetchData(type = "skills") {
