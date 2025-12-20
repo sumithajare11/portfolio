@@ -1233,5 +1233,13 @@ form .button-area {
   margin-right: 10px;
   color: #000;
 }
+.skill-card p {
+  font-size: 1.4rem;
+  font-weight: 250;
+}
 
+.skill-card p{
+  margin-top: 0.6rem;
+  letter-spacing: 0.05rem;
+}
 
