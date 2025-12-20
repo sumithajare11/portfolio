@@ -71,7 +71,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["Software Engineer","Iot & Embedded Systems Engineer","Full-Stack Developer", "Embedded Developer" ],
+    strings: ["Software Engineer","Iot & Embedded Systems Engineer","Full-Stack Developer", "Embedded Developer"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
