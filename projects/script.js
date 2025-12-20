@@ -19,7 +19,7 @@ $(document).ready(function () {
 
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === "visible") {
-        document.title = "Manya Mittal | Portfolio";
+        document.title = "Sumit Hajare | Portfolio";
         document.querySelector("#favicon").setAttribute("href", "/assets/images/favicon.png");
     } else {
         document.title = "Come Back To My Portfolio";
