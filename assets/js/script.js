@@ -80,8 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
     smartBackspace: true
   });
 });
-
-
 // <!-- typed js effect ends -->
 
 async function fetchData(type = "skills") {
