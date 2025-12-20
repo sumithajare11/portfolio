@@ -1214,9 +1214,24 @@ form .button-area {
 }
 
 
-
 .section-title {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
+
+.section-title h2 {
+  font-size: 3.5rem;   /* font thoda bada */
+  font-weight: 800;
+  color: #000;         /* Technical = black */
+}
+
+.section-title h2 span {
+  color: rgb(115, 3, 167); /* Skills = purple */
+}
+
+.section-title h2 i {
+  margin-right: 10px;
+  color: #000;
+}
+
 
