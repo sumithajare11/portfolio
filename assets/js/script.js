@@ -70,15 +70,12 @@ document.addEventListener('visibilitychange',
 
 
 // <!-- typed js effect starts -->
-document.addEventListener("DOMContentLoaded", function () {
-  new Typed(".typing-text", {
-    strings: ["Software Engineer","IoT & Embedded Systems Engineer","Full-Stack Developer","Embedded Developer"],
+var typed = new Typed(".typing-text", {
+    strings: ["Software Engineer","Embedded Developer","Iot & Embedded Engineer","full stack development"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
-    backDelay: 1000,
-    smartBackspace: true
-  });
+    backDelay: 500,
 });
 // <!-- typed js effect ends -->
 
