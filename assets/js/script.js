@@ -59,7 +59,7 @@ $(document).ready(function () {
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
-            document.title = "Portfolio | Manya Mittal";
+            document.title = "Portfolio | Sumit Hajare";
             $("#favicon").attr("href", "assets/images/favicon.png");
         }
         else {
@@ -71,7 +71,7 @@ document.addEventListener('visibilitychange',
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["AI/ML","Generative AI","Frontend development", "Backend development","MERN Stack development","full stack development"],
+    strings: ["Software Engineer","Iot & Embedded Systems Engineer","Full-Stack Developer", "Embedded Developer" ],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
