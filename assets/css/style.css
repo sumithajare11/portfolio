@@ -480,16 +480,13 @@ header .navbar ul li a:hover {
   color: #000;
 }
 
-.skill-box span{
-  font-size: 1.9rem;        /* yahin bada hoga text */
+.skill-box span {
+  font-size: 1.5rem;          /* same as About content */
   font-family: "Nunito", sans-serif;
   font-weight: 600;
-  letter-spacing: 0.08rem;
+  letter-spacing: 0.05rem;
   text-align: center;
 }
-
-
-
 
 /* skills section ends */
 
