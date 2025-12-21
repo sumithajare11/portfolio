@@ -1233,14 +1233,14 @@ form .button-area {
   margin-right: 10px;
   color: #000;
 }
+
 .skill-card p {
-  font-size: 6.2rem;
-  font-family: "Nunito";
-  font-weight: 600;
+  margin-top: 1.2rem;
+  font-size: 1.6rem;        /* ✔ readable & clean */
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;         /* ✔ light text */
+  letter-spacing: 0.05rem; /* ✔ slight spacing only */
+  text-align: center;
 }
 
-.skill-card p{
-  margin-top: 1.2rem;
-  letter-spacing: 4.5rem;
-}
 
