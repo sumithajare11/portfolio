@@ -481,9 +481,9 @@ header .navbar ul li a:hover {
 }
 
 .skill-box span {
-  font-size: 1.2rem;          /* same as About content */
+  font-size: 0.9rem;          /* same as About content */
   font-family: "Nunito", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.05rem;
   text-align: center;
 }
