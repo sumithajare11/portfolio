@@ -459,6 +459,38 @@ header .navbar ul li a:hover {
 .skill-box img{width:40px;height:40px;margin-bottom:.5rem}
 .skill-box span{font-size:.8rem;text-align:center}
 
+
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title h2 {
+  font-size: 3.5rem;   /* font thoda bada */
+  font-weight: 800;
+  color: #000;         /* Technical = black */
+}
+
+.section-title h2 span {
+  color: rgb(115, 3, 167); /* Skills = purple */
+}
+
+.section-title h2 i {
+  margin-right: 10px;
+  color: #000;
+}
+
+.skill-card p {
+  margin-top: 1.2rem;
+  font-size: 1.9rem;        /* ✔ readable & clean */
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;         /* ✔ light text */
+  letter-spacing: 0.05rem; /* ✔ slight spacing only */
+  text-align: center;
+}
+
+
+
 /* skills section ends */
 
 /* education section starts */
@@ -1214,33 +1246,6 @@ form .button-area {
 }
 
 
-.section-title {
-  text-align: center;
-  margin-bottom: 4rem;
-}
 
-.section-title h2 {
-  font-size: 3.5rem;   /* font thoda bada */
-  font-weight: 800;
-  color: #000;         /* Technical = black */
-}
-
-.section-title h2 span {
-  color: rgb(115, 3, 167); /* Skills = purple */
-}
-
-.section-title h2 i {
-  margin-right: 10px;
-  color: #000;
-}
-
-.skill-card p {
-  margin-top: 1.2rem;
-  font-size: 1.6rem;        /* ✔ readable & clean */
-  font-family: "Nunito", sans-serif;
-  font-weight: 300;         /* ✔ light text */
-  letter-spacing: 0.05rem; /* ✔ slight spacing only */
-  text-align: center;
-}
 
 
